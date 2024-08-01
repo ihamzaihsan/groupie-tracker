@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists</title>
+    <style>
+        .artist {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .artist img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Artists</h1>
+    <div id="artists">
+        {{range .}}
+        <div class="artist">
+            <a href="/artist?id={{.ID}}">
+                <img src="{{.Image}}" alt="{{.Name}}">
+            </a>
+            <p>{{.Name}}</p>
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>
