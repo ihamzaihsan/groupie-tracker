@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Artist.Name}}</title>
+</head>
+<body>
+    <h1>{{.Artist.Name}}</h1>
+    <p><strong>Created:</strong> {{.Artist.CreationDate}}</p>
+    <p><strong>First album released:</strong> {{.Artist.FirstAlbum}}</p>
+    <p><strong>Members:</strong> {{range .Artist.Members}}{{.}}, {{end}}</p>
+
+    <h2>Locations and Dates of Concerts</h2>
+    {{range .Location.Locations}}
+    {{.}}
+    {{end}}
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Date of concert</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
