@@ -191,7 +191,7 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Render the template
-	tmpl, err := template.ParseFiles("frontend/artists.html")
+	tmpl, err := template.ParseFiles("templates/details.html")
 	if err != nil {
 		log.Printf("Error parsing template file: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -211,8 +211,8 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Printf("Adata.Location: %v\n", data.Location)
-    fmt.Printf("Adata.date: %v\n", data.Date)
-    fmt.Printf("Adata.relation: %v\n", data.Relation)
+	fmt.Printf("Adata.date: %v\n", data.Date)
+	fmt.Printf("Adata.relation: %v\n", data.Relation)
 
 	w.Header().Set("Content-Type", "text/html")
 	tmpl.Execute(w, data)
@@ -234,7 +234,7 @@ func getArtists(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tmpl, err := template.ParseFiles("frontend/index.html")
+	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		log.Printf("Error parsing template file: %v", err)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -247,9 +247,9 @@ func getArtists(w http.ResponseWriter, r *http.Request) {
 
 // Main function
 func main() {
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
 	http.HandleFunc("/", getArtists)
 	http.HandleFunc("/artist", getArtistDetails)
-
-	log.Println("Server started at :8080")
+	log.Println("Server started at http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

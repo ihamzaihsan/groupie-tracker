@@ -30,9 +30,25 @@ width: 215px;
 height: 184px;
 border-radius: 15px;
 border: 1px solid rgba(255, 255, 255, 0.10);
-background: #201F26;
+background: hsl(249, 10%, 14%);
+overflow: hidden;
+cursor: pointer;
+object-fit: cover;
+}
+
+.cardDE {
+width: 1080px;
+height: 1080px;
+border-radius: 15px;
+border: 1px solid rgba(255, 255, 255, 0.10);
+background: hsl(249, 10%, 14%);
 overflow: hidden;
 object-fit: cover;
+}
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .card-content {
@@ -54,5 +70,6 @@ align-content: center;
 }
 .card img {
     height: auto;
-    width: 100%
+    width: 100%;
+    z-index: -1;
 }
