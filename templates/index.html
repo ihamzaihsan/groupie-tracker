@@ -12,7 +12,7 @@
     <div class="Title">Artists List</div>
 <div class="card-container">
     {{range .}}
-    <a href="templates/details.html" class="card-link">
+    <a href="/artist?id={{.ID}}" class="card-link">
         <div class="card">
             <div class="card-content">
                 <div class="word"> {{.Name}}</div>

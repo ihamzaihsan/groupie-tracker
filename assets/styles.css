@@ -36,6 +36,11 @@ cursor: pointer;
 object-fit: cover;
 }
 
+.detailsbox {
+    width: 1080px;
+    height: 1080px;
+}
+
 .cardDE {
 width: 1080px;
 height: 1080px;
