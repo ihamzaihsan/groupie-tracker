@@ -4,45 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Artist.Name}}</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="/assets/styles2.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         .text-white {
-            color: white;
+            display: inline-flex;
+
         }
     </style>
 </head>
 <body>
+    <div class="Shinycornerleft"></div>
+    <div class="Shinycornerright"></div>
+    <div class="container">
+        <div class="icon">
+            <div class="music-note"></div>
+            <div class="music-note"></div>
+            <div class="music-note"></div>
+        </div>
+    </div>
+    <div class="Title">🎸 Artist Details</div>
+
     <div class="Group">
         <img src="{{.Artist.Image}}">
         <div>
-            <h1 class="text-white">{{.Artist.Name}}</h1>
-            <p class="text-white"><strong>Created:</strong> {{.Artist.CreationDate}}</p>
-            <p class="text-white"><strong>First album released:</strong> {{.Artist.FirstAlbum}}</p>
-            <p class="text-white"><strong>Members:</strong> {{range .Artist.Members}}{{.}}, {{end}}</p>
-            <p class="text-white"><strong>Location:</strong> 
+            <h1 class="title">  {{.Artist.Name}}</h1>
+            <div clas="words">
+            <p class="headline"><strong>Created:</strong></p>
+               <p class="text">{{.Artist.CreationDate}} 
+            </div>
+            <p class="headline"><strong>First album released:</strong></p>
+            <p class="text">{{.Artist.FirstAlbum}}</p>
+            <p class="headline"><strong>Members:</strong></p>
+            <p class="text"> {{range .Artist.Members}}{{.}}, {{end}} </p>
+            <p class="headline"><strong>Location:</strong> </p>
+                <p class="text">
                 {{range .ProcessedLocations}}
                     {{.}} 
                 {{end}}
             </p>
-            <p class="text-white"><strong>Date:</strong> 
-                {{range .ProcessedDates}}
+            <p class="headline" ><strong>Date:</strong> </p>
+                <p class="text">{{range .ProcessedDates}}
                     {{.}} 
                 {{end}}
             </p>
-            <table>
+            <table class="besttable">
                 <thead>
-                    <tr>
-                        <th class="text-white">Location</th>
-                        <th class="text-white">Date of concert</th>
+                    <tr class="tableheadings">
+                        <div>
+ 
+                        <th >                             <span class="material-symbols-outlined">
+                            location_on
+                            </span> <p class="theadline">Location</p>                     
+                        </th>
+                        </div>
+                        <th><span class="material-symbols-outlined">
+                            calendar_month
+                            </span>  <p class="theadline">Date</p>        </th>
                     </tr>
                 </thead>
                 <tbody>
                     {{range $location, $dates := .Relation.DatesLocations}}
                     {{range $dates}}
                     <tr>
-                        <td class="text-white">{{$location}}</td>
-                        <td class="text-white">{{.}}</td>
+                        <td class="ttext">{{$location}}</td>
+                        <td class="ttext" >{{.}}</td>
                     </tr>
                     {{end}}
                     {{end}}

@@ -1,8 +1,243 @@
 body {
     background-color: #232222;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: top;
+    flex-direction: column;
+    row-gap: 0px;
+
 }
+.icon {
+    position: relative;
+    width: 100px;
+    height: 50px;
+}
+.music-note {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 60px;
+    background-color: #db2525;
+    border-radius: 10px;
+    transform-origin: top center;
+    animation: bounce 1s infinite;
+}
+
+.music-note:nth-child(1) {
+    left: 10px;
+    animation-delay: 0s;
+}
+
+.music-note:nth-child(2) {
+    left: 40px;
+    animation-delay: 0.2s;
+}
+
+.music-note:nth-child(3) {
+    left: 70px;
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+}
+.Shinycornerright {
+    width: 304px;
+    height: 304px;
+    flex-shrink: 0;
+    border-radius: 304px;
+    background: #1CCFC9;
+    filter: blur(120.05px);
+    position: absolute;
+    z-index: -1;
+    right: -100px;
+    top: -100px;
+    animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
+    }
+@keyframes slow-motion-shinycornerright {
+    0% {
+        transform: scale(1);
+        background: #1CCFC9;
+        right: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #1CCFC9; /* Slight color change */
+        right: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #1CCFC9;
+        right: -100px;
+        top: -100px;
+    }
+    }
+@keyframes slow-motion-shinycornerleft {
+    0% {
+        transform: scale(1);
+        background: #1CCFC9(25, 76%, 55%);
+        left: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #1CCFC9; /* Slight color change */
+        left: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #1CCFC9;
+        left: -100px;
+        top: -100px;
+    }
+    }
+    @keyframes slow-motion-red {
+    0% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #c34646; /* Slight color change */
+        left: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    }
+    .Shinycornerleft {
+    width: 304px;
+    height: 304px;
+    flex-shrink: 0;
+    border-radius: 304px;
+    background: #1CCFC9;
+    filter: blur(120.05px);
+    position: absolute;
+    z-index: -1;
+    left: -100px;
+    top: -100px;
+    animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
+    }
+
+.material-symbols-outlined {
+    align-items: center;
+    color: rgb(29, 58, 60);
+}
+
+.tableheadings{
+
+}
+
+
 
 .Group {
     justify-content: center;
     align-items: center;
+    margin-top: 0px;
+    padding: 32px 32px;
+    display:inline-flexbox;
+    border-radius: 49.256px;
+border: 1px solid rgba(255, 255, 255, 0.10);
+background: rgba(93, 90, 103, 0.10);
+backdrop-filter: blur(41.37488555908203px);
+margin: 0 16px
 }
+
+.besttable {
+    border-collapse: collapse;
+    width: 80%; 
+    display: inline-table;
+    table-layout: fixed
+    text-align: center; /* Center horizontally */
+    vertical-align: middle; /* Center vertically */
+    border-radius: 20px;
+    width: 100%;}
+td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Adds a 1px solid black border to table headers and cells */
+    border-opacity: 40%;
+    padding: 8px; /* Adds padding inside the cells for better spacing */
+    text-align: ; /* Aligns text to the left inside the cells */
+    background:rgb(29, 58, 60);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+th {
+    padding: 8px 0;
+    background-color: #1CCFC9; /* Optional: adds a background color to table headers */
+    border-right: 1px solid rgb;
+
+}
+.title {
+    color: white;
+    font-family: Inter;
+
+
+}
+
+.headline {
+    color: white;
+    font-family: Inter;
+    font-weight: 800;
+    margin-bottom: 0px;
+    font-style: normal;
+    font-size: 15px;
+    line-height: normal;
+
+}
+
+
+
+.text {
+    color: white;
+    font-weight: 0;
+    font-size: 15px;
+    line-height: normal;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.theadline {
+    color: rgb(29, 58, 60);
+    font-family: Inter;
+    font-weight: 400;
+    margin-bottom: 0px;
+    font-style: normal;
+    font-size: 15px;r
+    line-height: normal;
+
+}
+.ttext {
+    color: #1CCFC9;
+    font-family: Inter;
+    font-weight: 0;
+    font-size: 12px;
+}
+.Title {
+    color: white;
+    font-size: 100px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 88px;
+    margin-top: 88px;
+    font-family: "Comforter Brush", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    }

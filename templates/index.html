@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artists</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" />
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artists</title>
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="Title">Artists List</div>
+    <div class="Shinycornerleft"></div>
+    <div class="Shinycornerright"></div>
+
+    <div class="container">
+        <div class="icon">
+            <div class="music-note"></div>
+            <div class="music-note"></div>
+            <div class="music-note"></div>
+        </div>
+    </div>
+    <div class="Title"> 👩‍🎤 Artists List 👨‍🎤</div>
+
 <div class="card-container">
     {{range .}}
     <a href="/artist?id={{.ID}}" class="card-link">
@@ -17,7 +35,9 @@
             <div class="card-content">
                 <div class="word"> {{.Name}}</div>   
             </div> 
+            <div>
             <img src={{.Image}} class="pic">
+        </div>
         </div>
     </a>    
         {{end}}

@@ -2,17 +2,173 @@ body {
     background-color: #232222;
 }
 
+@keyframes slow-motion-shinycornerleft {
+    0% {
+        transform: scale(1);
+        background: #1CCFC9(25, 76%, 55%);
+        left: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #1CCFC9; /* Slight color change */
+        left: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #1CCFC9;
+        left: -100px;
+        top: -100px;
+    }
+    }
+    @keyframes slow-motion-red {
+    0% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #c34646; /* Slight color change */
+        left: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    }
+    .Shinycornerleft {
+    width: 304px;
+    height: 304px;
+    flex-shrink: 0;
+    border-radius: 304px;
+    background: #1CCFC9;
+    filter: blur(120.05px);
+    position: absolute;
+    z-index: -1;
+    left: -100px;
+    top: -100px;
+    animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
+    }
+
+@keyframes slow-motion-shinycornerright {
+    0% {
+        transform: scale(1);
+        background: #1CCFC9;
+        right: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #1CCFC9; /* Slight color change */
+        right: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #1CCFC9;
+        right: -100px;
+        top: -100px;
+    }
+    }
+    @keyframes slow-motion-red {
+    0% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    50% {
+        transform: scale(1.7); /* Slightly increase size */
+        background: #c34646; /* Slight color change */
+        left: -100px;
+        top: -100px;
+    }
+    100% {
+        transform: scale(1);
+        background: #c34646;
+        left: -100px;
+        top: -100px;
+    }
+    }
+    .Shinycornerright {
+    width: 304px;
+    height: 304px;
+    flex-shrink: 0;
+    border-radius: 304px;
+    background: #1CCFC9;
+    filter: blur(120.05px);
+    position: absolute;
+    z-index: -1;
+    right: -100px;
+    top: -100px;
+    animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+    transition: background 0.3s ease-in-out; /* Smooth background transition */
+    }
 .Title {
 color: white;
-font-family: Inter;
-font-size: 70.205px;
-font-style: normal;
-font-weight: 900;
+font-size: 100px;
 line-height: normal;
 text-align: center;
-margin-bottom: 88px;
+margin-bottom: 48px;
+margin-top: 88px;
+font-family: "Comforter Brush", system-ui;
+font-weight: 400;
+font-style: normal;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    position: relative;
+    width: 100px;
+    height: 50px;
+}
+
+.music-note {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 60px;
+    background-color: #1CCFC9;
+    border-radius: 10px;
+    transform-origin: top center;
+    animation: bounce 1s infinite;
+}
+
+.music-note:nth-child(1) {
+    left: 10px;
+    animation-delay: 0s;
+}
+
+.music-note:nth-child(2) {
+    left: 40px;
+    animation-delay: 0.2s;
+}
+
+.music-note:nth-child(3) {
+    left: 70px;
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+}
 
 .card-container {
 display: flex;
@@ -24,6 +180,7 @@ align-self: stretch;
 flex-wrap: wrap;
 margin-left: 60px;
 margin-right: 60px;
+row-gap: 48px;
 }
 
 .card {
@@ -37,9 +194,8 @@ cursor: pointer;
 object-fit: cover;
 }
 .card img:hover { 
-    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
-    filter: blur(5px);
     transform: scale(1.2);
+    filter: brightness(50%);
     
     
 } 
@@ -53,15 +209,6 @@ object-fit: cover;
     height: 1080px;
 }
 
-.cardDE {
-width: 1080px;
-height: 1080px;
-border-radius: 15px;
-border: 1px solid rgba(255, 255, 255, 0.10);
-background: hsl(249, 10%, 14%);
-overflow: hidden;
-object-fit: cover;
-}
 .card-link {
     display: block;
     text-decoration: none;
