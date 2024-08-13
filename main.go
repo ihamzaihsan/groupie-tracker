@@ -2,7 +2,6 @@ package main
 
 import (
     "encoding/json"
-    "github.com/gorilla/mux"
     "io"
     "log"
     "net/http"
@@ -96,7 +95,6 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
     renderErrorPage(w, http.StatusNotFound, "Page not found")
 }
 
-
 // Existing functions to get locations, dates, and relations
 func getLocations() ([]LocationDetails, error) {
     data, err := fetchData(getFullURL(locationsPath))
@@ -153,12 +151,12 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    vars := mux.Vars(r)
-    artistID := vars["id"]
-    // if artistID == "" {
-    //     renderErrorPage(w, http.StatusBadRequest, "Missing artist ID")
-    //     return
-    // }
+    // Extract artist ID from the URL path
+    artistID := strings.TrimPrefix(r.URL.Path, "/artist/")
+    if artistID == "" {
+        renderErrorPage(w, http.StatusBadRequest, "Missing artist ID")
+        return
+    }
 
     // Convert artistID to an integer
     id, err := strconv.Atoi(artistID)
@@ -315,11 +313,12 @@ func getArtists(w http.ResponseWriter, r *http.Request) {
 
 // Main function
 func main() {
-    r := mux.NewRouter()
-    r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-    r.HandleFunc("/", getArtists)
-    r.HandleFunc("/artist/{id}", getArtistDetails)
-	r.NotFoundHandler = http.HandlerFunc(notFoundHandler)
-    log.Println("Server started at http://localhost:8080")
-    log.Fatal(http.ListenAndServe(":8080", r))
+    mux := http.NewServeMux()
+mux.HandleFunc("/", getArtists)
+mux.HandleFunc("/artist/", getArtistDetails)
+mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
+mux.HandleFunc("/404", notFoundHandler)
+
+log.Println("Server started at http://localhost:8080")
+log.Fatal(http.ListenAndServe(":8080", mux))
 }
