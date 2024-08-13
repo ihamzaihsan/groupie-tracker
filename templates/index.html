@@ -30,7 +30,7 @@
 
 <div class="card-container">
     {{range .}}
-    <a href="/artist?id={{.ID}}" class="card-link">
+    <a href="/artist/{{.ID}}" class="card-link">
         <div class="card">
             <div class="card-content">
                 <div class="word"> {{.Name}}</div>   
@@ -40,7 +40,7 @@
         </div>
         </div>
     </a>    
-        {{end}}
+    {{end}}
 </div>
 </body>
 </html>
