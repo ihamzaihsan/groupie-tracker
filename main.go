@@ -80,7 +80,8 @@ func renderErrorPage(w http.ResponseWriter, code int, errorMsg string) {
     w.WriteHeader(code)
     tmpl, err := template.ParseFiles("templates/error.html")
     if err != nil {
-        http.Error(w, "Error 500: Internal Server Error", http.StatusInternalServerError)
+        log.Printf("Error parsing error template: %v", err)
+        http.Error(w, "Internal Server Error", http.StatusInternalServerError)
         return
     }
     data := ErrorPageData{
@@ -99,13 +100,12 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 func getLocations() ([]LocationDetails, error) {
     data, err := fetchData(getFullURL(locationsPath))
     if err != nil {
-        log.Printf("Error fetching locations: %v", err)
         return nil, err
     }
 
     var locationsResponse LocationsResponse
-    if err := json.Unmarshal(data, &locationsResponse); err != nil {
-        log.Printf("Error unmarshalling locations: %v", err)
+    err = json.Unmarshal(data, &locationsResponse)
+    if err != nil {
         return nil, err
     }
 
@@ -115,13 +115,12 @@ func getLocations() ([]LocationDetails, error) {
 func getDates() ([]Date, error) {
     data, err := fetchData(getFullURL(datesPath))
     if err != nil {
-        log.Printf("Error fetching dates: %v", err)
         return nil, err
     }
 
     var datesResponse DatesResponse
-    if err := json.Unmarshal(data, &datesResponse); err != nil {
-        log.Printf("Error unmarshalling dates: %v", err)
+    err = json.Unmarshal(data, &datesResponse)
+    if err != nil {
         return nil, err
     }
 
@@ -131,13 +130,12 @@ func getDates() ([]Date, error) {
 func getRelations() ([]Relation, error) {
     data, err := fetchData(getFullURL(relationPath))
     if err != nil {
-        log.Printf("Error fetching relations: %v", err)
         return nil, err
     }
 
     var relationsResponse RelationsResponse
-    if err := json.Unmarshal(data, &relationsResponse); err != nil {
-        log.Printf("Error unmarshalling relations: %v", err)
+    err = json.Unmarshal(data, &relationsResponse)
+    if err != nil {
         return nil, err
     }
 
@@ -147,7 +145,7 @@ func getRelations() ([]Relation, error) {
 // New function to get artist details
 func getArtistDetails(w http.ResponseWriter, r *http.Request) {
     if r.Method != http.MethodGet {
-        http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+        renderErrorPage(w, http.StatusMethodNotAllowed, "Method not allowed")
         return
     }
 
@@ -174,8 +172,9 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
     }
 
     var artist Artist
-    if err := json.Unmarshal(artistData, &artist); err != nil {
-        log.Printf("Error unmarshalling artist: %v", err)
+    err = json.Unmarshal(artistData, &artist)
+    if err != nil {
+        log.Printf("Error unmarshalling artist data: %v", err)
         renderErrorPage(w, http.StatusInternalServerError, "Error processing artist details")
         return
     }
@@ -207,7 +206,7 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
     // Filter data for the specific artist
     var location LocationDetails
     for _, loc := range locations {
-        if loc.ID == artist.ID {
+        if loc.ID == id {
             location = loc
             break
         }
@@ -215,7 +214,7 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
 
     var date Date
     for _, d := range dates {
-        if d.ID == artist.ID {
+        if d.ID == id {
             date = d
             break
         }
@@ -223,7 +222,7 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
 
     var relation Relation
     for _, rel := range relations {
-        if rel.ID == artist.ID {
+        if rel.ID == id {
             relation = rel
             break
         }
@@ -231,59 +230,48 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
 
     // Process location data
     var processedLocations []string
-    for i, loc := range location.Locations {
-        processedLoc := strings.ReplaceAll(loc, "_", " ")
-        if i == len(location.Locations)-1 {
-            processedLoc = strings.TrimSuffix(processedLoc, ",") + "."
-        }
-        processedLocations = append(processedLocations, processedLoc)
+    for _, loc := range location.Locations {
+        processedLocations = append(processedLocations, loc)
     }
 
     // Process date data
     var processedDates []string
-    for i, d := range date.Dates {
-        processedDate := strings.Replace(d, "*", ",", -1)
-        if i == 0 {
-            processedDate = strings.TrimPrefix(processedDate, ",")
-        }
-        if i == len(date.Dates)-1 {
-            processedDate = strings.TrimSuffix(processedDate, ",") + "."
-        }
-        processedDates = append(processedDates, processedDate)
+    for _, d := range date.Dates {
+        processedDates = append(processedDates, d)
     }
 
     // Render the template
     tmpl, err := template.ParseFiles("templates/details.html")
     if err != nil {
-        log.Printf("Error parsing template file: %v", err)
-        renderErrorPage(w, http.StatusInternalServerError, "Error rendering page")
+        log.Printf("Error parsing details template: %v", err)
+        renderErrorPage(w, http.StatusInternalServerError, "Error rendering artist details")
         return
     }
 
     data := struct {
-        Artist             Artist
+        Artist            Artist
         ProcessedLocations []string
         ProcessedDates     []string
         Relation           Relation
     }{
-        Artist:             artist,
+        Artist:            artist,
         ProcessedLocations: processedLocations,
         ProcessedDates:     processedDates,
         Relation:           relation,
     }
 
-    w.Header().Set("Content-Type", "text/html")
     tmpl.Execute(w, data)
 }
 
 // Function to get artists and render the index page
 func getArtists(w http.ResponseWriter, r *http.Request) {
     if r.Method != http.MethodGet {
-        http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
+        renderErrorPage(w, http.StatusMethodNotAllowed, "Method not allowed")
         return
     }
 
-    data, err := fetchData(getFullURL(artistsPath))
+    // Fetch artists
+    artistData, err := fetchData(getFullURL(artistsPath))
     if err != nil {
         log.Printf("Error fetching artists: %v", err)
         renderErrorPage(w, http.StatusInternalServerError, "Error fetching artists")
@@ -291,34 +279,45 @@ func getArtists(w http.ResponseWriter, r *http.Request) {
     }
 
     var artists []Artist
-    if err := json.Unmarshal(data, &artists); err != nil {
-        log.Printf("Error unmarshalling artists: %v", err)
-        renderErrorPage(w, http.StatusInternalServerError, "Error processing artists")
+    err = json.Unmarshal(artistData, &artists)
+    if err != nil {
+        log.Printf("Error unmarshalling artists data: %v", err)
+        renderErrorPage(w, http.StatusInternalServerError, "Error processing artists data")
         return
     }
 
+    // Render the template
     tmpl, err := template.ParseFiles("templates/index.html")
     if err != nil {
-        log.Printf("Error parsing template file: %v", err)
-        renderErrorPage(w, http.StatusInternalServerError, "Error rendering page")
+        log.Printf("Error parsing index template: %v", err)
+        renderErrorPage(w, http.StatusInternalServerError, "Error rendering artists list")
         return
     }
 
-    w.Header().Set("Content-Type", "text/html")
-    if err := tmpl.Execute(w, artists); err != nil {
-        log.Printf("Error executing template: %v", err)
-        renderErrorPage(w, http.StatusInternalServerError, "Error rendering page")
-    }
+    tmpl.Execute(w, artists)
 }
 
 // Main function
 func main() {
     mux := http.NewServeMux()
-mux.HandleFunc("/", getArtists)
-mux.HandleFunc("/artist/", getArtistDetails)
-mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
-mux.HandleFunc("/404", notFoundHandler)
 
-log.Println("Server started at http://localhost:8080")
-log.Fatal(http.ListenAndServe(":8080", mux))
+    mux.HandleFunc("/artist/", getArtistDetails)
+    mux.HandleFunc("/", getArtists)
+    mux.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
+        http.ServeFile(w, r, "assets/favicon.png")
+    })
+
+    // Set custom NotFoundHandler
+    mux.HandleFunc("/404", notFoundHandler)
+
+    // Custom handler to catch all undefined routes
+    catchAllHandler := func(w http.ResponseWriter, r *http.Request) {
+        if r.URL.Path != "/" && !strings.HasPrefix(r.URL.Path, "/artist/") && r.URL.Path != "/favicon.ico" {
+            notFoundHandler(w, r)
+            return
+        }
+        mux.ServeHTTP(w, r)
+    }
+
+    log.Fatal(http.ListenAndServe(":8080", http.HandlerFunc(catchAllHandler)))
 }
