@@ -8,6 +8,7 @@ import (
     "strconv"
     "strings"
     "text/template"
+    "fmt"
 )
 
 const (
@@ -299,25 +300,24 @@ func getArtists(w http.ResponseWriter, r *http.Request) {
 
 // Main function
 func main() {
+    // http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
     mux := http.NewServeMux()
-
+    mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
     mux.HandleFunc("/artist/", getArtistDetails)
     mux.HandleFunc("/", getArtists)
-    mux.HandleFunc("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
-        http.ServeFile(w, r, "assets/favicon.png")
-    })
 
     // Set custom NotFoundHandler
     mux.HandleFunc("/404", notFoundHandler)
 
     // Custom handler to catch all undefined routes
     catchAllHandler := func(w http.ResponseWriter, r *http.Request) {
-        if r.URL.Path != "/" && !strings.HasPrefix(r.URL.Path, "/artist/") && r.URL.Path != "/favicon.ico" {
+        if r.URL.Path != "/" && !strings.HasPrefix(r.URL.Path, "/artist/") && !strings.HasPrefix(r.URL.Path, "/assets/") {
             notFoundHandler(w, r)
             return
         }
         mux.ServeHTTP(w, r)
     }
-
+    fmt.Println("Server starting: http://localhost:8080")
+    fmt.Println("CTRL + C to stop server")
     log.Fatal(http.ListenAndServe(":8080", http.HandlerFunc(catchAllHandler)))
 }
