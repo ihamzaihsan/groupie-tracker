@@ -160,7 +160,7 @@ func getArtistDetails(w http.ResponseWriter, r *http.Request) {
     // Convert artistID to an integer
     id, err := strconv.Atoi(artistID)
     if err != nil || id < 1 || id > 52 {
-        renderErrorPage(w, http.StatusNotFound, "Artist not found")
+        renderErrorPage(w, http.StatusBadRequest, "Artist not Found")
         return
     }
 
