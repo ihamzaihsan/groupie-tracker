@@ -148,16 +148,16 @@ body {
 
 
 .Group {
+    width: 90% ;
     justify-content: center;
     align-items: center;
     margin-top: 0px;
     padding: 32px 32px;
     display:inline-flexbox;
     border-radius: 49.256px;
-border: 1px solid rgba(255, 255, 255, 0.10);
-background: rgba(93, 90, 103, 0.10);
-backdrop-filter: blur(41.37488555908203px);
-margin: 0 16px
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(93, 90, 103, 0.10);
+    backdrop-filter: blur(41.37488555908203px);
 }
 
 .besttable {
@@ -168,7 +168,8 @@ margin: 0 16px
     text-align: center; /* Center horizontally */
     vertical-align: middle; /* Center vertically */
     border-radius: 20px;
-    width: 100%;}
+    width: 100%;
+}
 td {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Adds a 1px solid black border to table headers and cells */
     border-opacity: 40%;
@@ -204,7 +205,6 @@ th {
 }
 
 
-
 .text {
     color: white;
     font-weight: 0;
@@ -221,15 +221,15 @@ th {
     margin-bottom: 0px;
     font-style: normal;
     font-size: 15px;r
-    line-height: normal;
-
 }
+
 .ttext {
     color: #1CCFC9;
     font-family: Inter;
     font-weight: 0;
     font-size: 12px;
 }
+
 .Title {
     color: white;
     font-size: 100px;
@@ -240,4 +240,29 @@ th {
     font-family: "Comforter Brush", system-ui;
     font-weight: 400;
     font-style: normal;
+    }
+
+    .back-button {
+        width: 30%;
+        height: 10%;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        display:  inline-flex;
+        color: #f4f4f4;
+        text-decoration: none;
+        background: #1BBAB4;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        text-decoration:none;
+        cursor: pointer;
+        }
+
+.back-button:hover {
+    background-color: #f4f4f4;
+    color:#090E0E;
+    
     }

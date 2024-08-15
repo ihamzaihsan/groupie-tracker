@@ -1,0 +1,115 @@
+body {
+    background-color: #232222;
+    align-items: center;
+    align-content: center;
+
+}
+
+.errorred {
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width:100%
+}
+
+.text {
+    color: white;
+}
+
+  .back-button {
+        width: 30%;
+        height: 10%;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        display:  inline-flex;
+        color: #f4f4f4;
+        text-decoration: none;
+        background: #1BBAB4;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        text-decoration:none;
+        cursor: pointer;
+        }
+
+.back-button:hover {
+    background-color: #f4f4f4;
+    color:#090E0E;
+    
+    }
+
+    .Shinycornerleft {
+        width: 304px;
+        height: 304px;
+        flex-shrink: 0;
+        border-radius: 304px;
+        background: #cf1c1c;
+        filter: blur(120.05px);
+        position: absolute;
+        z-index: -1;
+        left: -100px;
+        top: -100px;
+        animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+        transition: background 0.3s ease-in-out; /* Smooth background transition */
+        }
+        @keyframes slow-motion-shinycornerleft {
+            0% {
+                transform: scale(1);
+                background: #cf1c1c(25, 76%, 55%);
+                left: -100px;
+                top: -100px;
+            }
+            50% {
+                transform: scale(1.7); /* Slightly increase size */
+                background: #cf1c1c; /* Slight color change */
+                left: -100px;
+                top: -100px;
+            }
+            100% {
+                transform: scale(1);
+                background: #cf1c1c;
+                left: -100px;
+                top: -100px;
+            }
+            }
+            .Shinycornerright {
+                width: 304px;
+                height: 304px;
+                flex-shrink: 0;
+                border-radius: 304px;
+                background: #cf1c1c;
+                filter: blur(120.05px);
+                position: absolute;
+                z-index: -1;
+                right: -100px;
+                top: -100px;
+                animation: slow-motion-shinycorner 5s infinite; /* 5s duration, infinite loop */
+                transition: background 0.3s ease-in-out; /* Smooth background transition */
+                }
+
+
+            @keyframes slow-motion-shinycornerright {
+                0% {
+                    transform: scale(1);
+                    background: #cf1c1c;
+                    right: -100px;
+                    top: -100px;
+                }
+                50% {
+                    transform: scale(1.7); /* Slightly increase size */
+                    background: #cf1c1c; /* Slight color change */
+                    right: -100px;
+                    top: -100px;
+                }
+                100% {
+                    transform: scale(1);
+                    background: #cf1c1c;
+                    right: -100px;
+                    top: -100px;
+                }
+                }
