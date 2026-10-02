@@ -2,7 +2,7 @@
 .error-page { padding-block: 80px 110px; text-align: center; min-height: 65vh; }
 .error-page > .eyebrow { color: var(--muted); }
 .error-code { font: 500 clamp(100px, 20vw, 220px)/1 var(--display); letter-spacing: -10px; margin-block: 28px; }
-.error-code span { display: inline-block; font-size: .6em; color: #7e9437; vertical-align: top; margin-left: 15px; }
+.error-code span { display: inline-block; font-size: .6em; color: var(--accent); vertical-align: top; margin-left: 15px; }
 .error-page h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 500; letter-spacing: -1.5px; }
 .error-page > p:not(.eyebrow) { font-size: 14px; color: var(--muted); line-height: 1.8; max-width: 440px; margin: 0 auto 28px; }
 @media (max-width: 560px) { .error-page { padding-block: 60px 80px; }.error-code { letter-spacing: -5px; } }

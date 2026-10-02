@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-//go:embed templates/*.html assets/*.css assets/*.svg data/*.json
+//go:embed templates/*.html assets/*.css assets/*.svg assets/*.js data/*.json
 var resources embed.FS
 
 func main() {

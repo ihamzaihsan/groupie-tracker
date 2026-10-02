@@ -1,0 +1,89 @@
+/* Shared palette for every page; the system theme also works without scripts. */
+:root {
+    color-scheme: light;
+    --paper: #f4f2e9;
+    --ink: #20221e;
+    --muted: #707269;
+    --line: #d9d9ce;
+    --acid: #d5fa45;
+    --accent-ink: #20221e;
+    --accent: #738e22;
+    --focus: #6a8522;
+    --button-hover: #404639;
+    --surface: #faf9f3;
+    --input-surface: #fff8;
+    --panel: #fff5;
+    --chip: #eeefe4;
+    --badge: #e5e6dc;
+    --image-placeholder: #dedfd4;
+    --card-label: #f4f2e9ed;
+    --selected: #e7edcf;
+    --selected-border: #aab976;
+    --map-surface: #e9eedf;
+    --map-border: #d5ddc7;
+    --map-grid: #d3ddc64a;
+    --map-label: #e9eedfee;
+    --map-muted: #555f48;
+    --map-notice: #e9ecd8;
+    --map-image-filter: none;
+    --frame: #20221e;
+    --frame-text: #f4f2e9;
+    --font: 'DM Sans', sans-serif;
+    --display: 'Space Grotesk', sans-serif;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #181c17;
+    --ink: #f4f2e9;
+    --muted: #acb4a4;
+    --line: #414a3b;
+    --accent: #b4d65e;
+    --focus: #d5fa45;
+    --button-hover: #d5fa45;
+    --surface: #22281f;
+    --input-surface: #262d23;
+    --panel: #20261e;
+    --chip: #313b2a;
+    --badge: #35402d;
+    --image-placeholder: #30382b;
+    --card-label: #181c17ed;
+    --selected: #35442a;
+    --selected-border: #839c54;
+    --map-surface: #252e20;
+    --map-border: #4c5b3e;
+    --map-grid: #84996b26;
+    --map-label: #252e20ee;
+    --map-muted: #b7c5a7;
+    --map-notice: #313d25;
+    --map-image-filter: brightness(.43) saturate(.8);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        color-scheme: dark;
+        --paper: #181c17;
+        --ink: #f4f2e9;
+        --muted: #acb4a4;
+        --line: #414a3b;
+        --accent: #b4d65e;
+        --focus: #d5fa45;
+        --button-hover: #d5fa45;
+        --surface: #22281f;
+        --input-surface: #262d23;
+        --panel: #20261e;
+        --chip: #313b2a;
+        --badge: #35402d;
+        --image-placeholder: #30382b;
+        --card-label: #181c17ed;
+        --selected: #35442a;
+        --selected-border: #839c54;
+        --map-surface: #252e20;
+        --map-border: #4c5b3e;
+        --map-grid: #84996b26;
+        --map-label: #252e20ee;
+        --map-muted: #b7c5a7;
+        --map-notice: #313d25;
+        --map-image-filter: brightness(.43) saturate(.8);
+    }
+}
