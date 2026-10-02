@@ -194,7 +194,7 @@ func (g *geocoder) fetch(ctx context.Context, location string) (geographicPoint,
 	if err != nil {
 		return geographicPoint{}, err
 	}
-	req.Header.Set("User-Agent", "GroupieTracker/1.0 (concert archive geocoding)")
+	req.Header.Set("User-Agent", "ConcertAtlas/1.0 (concert archive geocoding)")
 	req.Header.Set("Accept", "application/json")
 	resp, err := g.client.Do(req)
 	if err != nil {
