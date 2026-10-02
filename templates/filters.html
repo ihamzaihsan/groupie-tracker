@@ -1,0 +1,33 @@
+{{define "artist-filters"}}
+<details class="filter-panel" {{if .Active}}open{{end}}>
+    <summary><span><span class="filter-symbol" aria-hidden="true">≡</span> Fine-tune your collection</span><span class="filter-badge">{{if .Active}}FILTERS APPLIED{{else}}DATES · MEMBERS · PLACES{{end}}</span></summary>
+    <div class="filter-body">
+        <p class="filter-intro" id="filter-help">Combine the filters to find your sound. Dates include both boundaries; leave either blank for an open range. Multiple checkboxes match any selection within their group.</p>
+        <div class="filter-grid">
+            <fieldset class="filter-range"><legend>01 / Formation year</legend><div class="range-fields"><label>From<input type="number" name="creation_from" min="1" max="9999" step="1" placeholder="Any year" value="{{.CreationFrom}}" form="collection-tools"></label><span aria-hidden="true">—</span><label>To<input type="number" name="creation_to" min="1" max="9999" step="1" placeholder="Any year" value="{{.CreationTo}}" form="collection-tools"></label></div></fieldset>
+            <fieldset class="filter-range"><legend>02 / First album release</legend><div class="range-fields"><label>From<input type="date" name="album_from" min="0001-01-01" max="9999-12-31" value="{{.AlbumFrom}}" form="collection-tools"></label><span aria-hidden="true">—</span><label>To<input type="date" name="album_to" min="0001-01-01" max="9999-12-31" value="{{.AlbumTo}}" form="collection-tools"></label></div></fieldset>
+            <fieldset class="filter-members"><legend>03 / Number of members</legend><div class="member-options">{{range .Members}}<label class="member-option"><input type="checkbox" name="members" value="{{.Value}}" {{if .Selected}}checked{{end}} form="collection-tools"><span>{{.Label}}</span></label>{{end}}</div><p>Choose one or more band sizes.</p></fieldset>
+        </div>
+        <fieldset class="filter-locations"><legend>04 / Concert locations <span class="location-selection-count">{{.SelectedLocations}} selected</span></legend>
+            <p class="filter-intro">Expand a country, then a region to choose cities. Check All for a whole country or region. Mix multiple countries, regions and cities.</p>
+            <div class="location-options" tabindex="0" role="group" aria-label="Scrollable country, region and city selections">
+                {{range .Locations}}{{$country := .Country.Label}}
+                <details class="location-group" {{if .Active}}open{{end}}>
+                    <summary><span class="location-name">{{.Country.Label}}</span><label class="location-all"><input type="checkbox" name="location" value="{{.Country.Value}}" {{if .Country.Selected}}checked{{end}} form="collection-tools" aria-label="All locations in {{.Country.Label}}">All</label></summary>
+                    <div class="location-group-options">
+                        {{range .Regions}}
+                        <details class="location-region" {{if .Active}}open{{end}}>
+                            <summary><span class="location-name">{{.Region.Label}} <small>{{len .Cities}} {{if eq (len .Cities) 1}}place{{else}}places{{end}}</small></span><label class="location-all"><input type="checkbox" name="location" value="{{.Region.Value}}" {{if .Region.Selected}}checked{{end}} form="collection-tools" aria-label="All locations in {{.Region.Label}}, {{$country}}">All</label></summary>
+                            <div class="location-cities">{{range .Cities}}<label class="check-option"><input type="checkbox" name="location" value="{{.Value}}" {{if .Selected}}checked{{end}} form="collection-tools">{{.Label}}</label>{{end}}</div>
+                        </details>
+                        {{end}}
+                        {{if .Cities}}<div class="location-cities"><p class="option-heading">{{if .Regions}}OTHER RECORDED PLACES{{else}}CITIES &amp; PLACES{{end}}</p>{{range .Cities}}<label class="check-option"><input type="checkbox" name="location" value="{{.Value}}" {{if .Selected}}checked{{end}} form="collection-tools">{{.Label}}</label>{{end}}</div>{{end}}
+                    </div>
+                </details>
+                {{end}}
+            </div>
+        </fieldset>
+        <div class="filter-actions"><button class="button button-dark" type="submit" form="collection-tools">Apply filters ↗</button>{{if .Active}}<a class="reset-search" href="{{.ResetURL}}">Clear filters</a>{{end}}<span>YOUR NEXT DISCOVERY IS IN THE DETAILS.</span></div>
+    </div>
+</details>
+{{end}}

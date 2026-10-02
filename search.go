@@ -22,6 +22,7 @@ type collectionPageData struct {
 	Sort        string
 	View        string
 	Suggestions []searchSuggestion
+	Filters     artistFilters
 }
 
 type searchField struct {
@@ -98,6 +99,11 @@ func (app *application) searchArtists(w http.ResponseWriter, r *http.Request) {
 		app.errorPage(w, http.StatusBadRequest, "Invalid search parameters")
 		return
 	}
+	filters, err := parseArtistFilters(params)
+	if err != nil {
+		app.errorPage(w, http.StatusBadRequest, err.Error())
+		return
+	}
 	query := strings.TrimSpace(params.Get("q"))
 	if !utf8.ValidString(query) || utf8.RuneCountInString(query) > 200 {
 		app.errorPage(w, http.StatusBadRequest, "Search must contain at most 200 characters")
@@ -130,6 +136,10 @@ func (app *application) searchArtists(w http.ResponseWriter, r *http.Request) {
 	for _, location := range locations.Index {
 		locationsByID[location.ID] = location.Locations
 	}
+	if err := filters.buildOptions(artists, locationsByID, app.geocoder.catalog); err != nil {
+		app.errorPage(w, http.StatusBadRequest, err.Error())
+		return
+	}
 	fieldsByArtist := make(map[int][]searchField, len(artists))
 	for _, artist := range artists {
 		fieldsByArtist[artist.ID] = artistSearchFields(artist, locationsByID[artist.ID])
@@ -137,6 +147,7 @@ func (app *application) searchArtists(w http.ResponseWriter, r *http.Request) {
 	data := collectionPageData{
 		Total: len(artists), Query: query, Sort: sortOrder, View: view,
 		Suggestions: buildSuggestions(fieldsByArtist),
+		Filters:     filters,
 	}
 	searchText, category := query, ""
 	// A selected native suggestion restricts the search to its labeled category.
@@ -148,7 +159,7 @@ func (app *application) searchArtists(w http.ResponseWriter, r *http.Request) {
 	}
 	normalized := normalizeSearch(searchText)
 	for _, artist := range artists {
-		if normalized == "" || matchesArtist(fieldsByArtist[artist.ID], normalized, category) {
+		if (normalized == "" || matchesArtist(fieldsByArtist[artist.ID], normalized, category)) && filters.matches(artist, locationsByID[artist.ID], app.geocoder.catalog) {
 			data.Artists = append(data.Artists, artist)
 		}
 	}
