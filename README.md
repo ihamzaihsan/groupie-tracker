@@ -1,4 +1,4 @@
-# Groupie Tracker
+# Concert Atlas: Artist & Concert Explorer
 
 A Go web application for exploring artists, bands, and concert histories. Built around the [Groupie Trackers API](https://groupietrackers.herokuapp.com/api), it combines artist profiles, categorized search, advanced filters, and concert maps in a responsive interface.
 
