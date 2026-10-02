@@ -8,6 +8,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"net/url"
 	"strconv"
 	"strings"
 	"time"
@@ -16,6 +17,7 @@ import (
 type application struct {
 	api       apiClient
 	templates *template.Template
+	geocoder  *geocoder
 }
 
 type ErrorPageData struct {
@@ -28,6 +30,7 @@ type detailPageData struct {
 	ProcessedLocations []string
 	ProcessedDates     []string
 	Relation           Relation
+	Map                concertMapData
 }
 
 func newApplication(client *http.Client, apiURL string) (*application, error) {
@@ -118,6 +121,11 @@ func (app *application) artistDetails(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(r.Context(), 35*time.Second)
 	defer cancel()
 	r = r.WithContext(ctx)
+	params, err := url.ParseQuery(r.URL.RawQuery)
+	if err != nil || (params.Get("map") != "" && params.Get("map") != "1") || (params.Get("focus") != "" && params.Get("map") != "1") {
+		app.errorPage(w, http.StatusBadRequest, "Invalid concert map options")
+		return
+	}
 	rawID := strings.TrimPrefix(r.URL.Path, "/artist/")
 	id, err := strconv.Atoi(rawID)
 	if err != nil || id < 1 || rawID != strconv.Itoa(id) {
@@ -180,6 +188,11 @@ func (app *application) artistDetails(w http.ResponseWriter, r *http.Request) {
 			data.Relation = relation
 			break
 		}
+	}
+	data.Map, err = app.buildConcertMap(ctx, data.ProcessedLocations, data.Relation.DatesLocations, params.Get("map") == "1", params.Get("focus"))
+	if err != nil {
+		app.errorPage(w, http.StatusBadRequest, "Choose a concert location from this artist's map")
+		return
 	}
 	app.render(w, http.StatusOK, "details.html", data)
 }

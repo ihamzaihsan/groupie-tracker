@@ -1,0 +1,29 @@
+{{define "concert-map"}}
+<section class="concert-map-section" id="concert-map" aria-labelledby="concert-map-title">
+    <div class="section-heading"><div><p class="eyebrow">THE SOUND, ON THE GROUND</p><h2 id="concert-map-title">Every stop. A story<span class="accent-dot">.</span></h2></div><span class="collection-total">{{len .Map.Locations}} CONCERT LOCATIONS</span></div>
+    {{if .Map.Locations}}
+        {{if .Map.Loaded}}
+        <div class="map-toolbar">
+            <form action="/artist/{{.Artist.ID}}#concert-map" method="get"><input type="hidden" name="map" value="1"><label for="map-focus">Map view</label><select id="map-focus" name="focus"><option value="">All locations</option>{{range .Map.Locations}}{{if .Found}}<option value="{{.Key}}" {{if eq $.Map.Focus .Key}}selected{{end}}>{{.Number}}. {{.Label}}</option>{{end}}{{end}}</select><button class="button button-dark" type="submit">View map ↗</button></form>
+            <a class="map-reset" href="/artist/{{.Artist.ID}}?map=1#concert-map">{{if .Map.Focus}}Reset to world view{{else}}Refresh locations{{end}} ↻</a>
+        </div>
+        <p class="map-feedback" role="status">{{.Map.Mapped}} of {{len .Map.Locations}} locations mapped. {{if .Map.FocusedName}}Focused on {{.Map.FocusedName}}.{{else}}Select a numbered marker or choose a location to zoom in.{{end}}</p>
+        {{if .Map.Unavailable}}<p class="map-notice">{{.Map.Unavailable}} {{if eq .Map.Unavailable 1}}location could{{else}}locations could{{end}} not be mapped. The concert archive is still available below. Refresh later to retry temporary failures.</p>{{end}}
+        <div class="map-canvas">
+            <svg class="concert-map" viewBox="{{.Map.ViewBox}}" role="img" aria-labelledby="map-svg-title map-svg-description">
+                <title id="map-svg-title">Concert locations for {{.Artist.Name}}</title>
+                <desc id="map-svg-description">{{.Map.Mapped}} geocoded concert locations. Numbered markers correspond to the location list below.</desc>
+                <image href="/assets/world.svg" x="0" y="0" width="1000" height="500"/>
+                {{range .Map.Locations}}{{if .Found}}<a href="/artist/{{$.Artist.ID}}?map=1&amp;focus={{.Key}}#concert-map" aria-label="Focus on {{.Label}}"><title>{{.Label}} — {{.Coordinates}}</title><circle class="map-pin{{if eq $.Map.Focus .Key}} is-focused{{end}}" cx="{{.X}}" cy="{{.Y}}" r="{{$.Map.MarkerRadius}}"/><text class="map-pin-number" x="{{.X}}" y="{{.Y}}" font-size="{{$.Map.LabelSize}}" text-anchor="middle" dominant-baseline="central">{{.Number}}</text></a>{{end}}{{end}}
+            </svg>
+            <span class="map-corner-label">{{if .Map.FocusedName}}REGIONAL VIEW{{else}}WORLD VIEW{{end}} / CONCERT ARCHIVE</span>
+        </div>
+        <p class="map-attribution">Geocoding: <a href="https://photon.komoot.io/">Photon</a> · © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · Basemap: <a href="https://www.naturalearthdata.com/">Natural Earth</a></p>
+        <p class="map-help">Markers show the geocoder’s place coordinates, not exact concert venues. Place names can be shared; the matched region is shown below. Nearby markers can overlap; the numbered list lets you focus on each stop.</p>
+        <ol class="map-location-list">{{range .Map.Locations}}<li class="map-location{{if eq $.Map.Focus .Key}} is-selected{{end}}"><span class="location-number">{{.Number}}</span><div><h3>{{if .Found}}<a href="/artist/{{$.Artist.ID}}?map=1&amp;focus={{.Key}}#concert-map">{{.Label}}</a>{{else}}{{.Label}}{{end}}</h3>{{if .Found}}<p>{{.Coordinates}}</p><small>Matched: {{.MatchedPlace}}</small>{{if .Note}}<p class="map-match-note">{{.Note}}</p>{{end}}{{else}}<p>{{.Problem}}</p>{{end}}</div>{{if .Found}}<a class="map-detail-link" href="{{.DetailURL}}" target="_blank" rel="noopener noreferrer" aria-label="Open detailed OpenStreetMap view of {{.Label}} in a new tab">Detailed map ↗</a>{{end}}</li>{{end}}</ol>
+        {{else}}
+        <div class="map-preview"><img src="/assets/world.svg" alt="World land outlines" width="1000" height="500"><div class="map-preview-copy"><span aria-hidden="true">◎</span><h3>Put the archive on the map.</h3><p>See where {{.Artist.Name}} took the music.<br>Explore the recorded concert locations.</p><a href="/artist/{{.Artist.ID}}?map=1#concert-map" class="button button-dark">Show concert map ↗</a></div></div>
+        {{end}}
+    {{else}}<div class="empty-state"><h3>No stops to map yet.</h3><p>This artist has no recorded concert locations.</p></div>{{end}}
+</section>
+{{end}}

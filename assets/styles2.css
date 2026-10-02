@@ -8,3 +8,45 @@
 @media (max-width: 1000px) { .profile-hero { gap: 40px; }.profile-intro h1 { letter-spacing: -2px; }.concert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.discover-banner > span { display: none; } }
 @media (max-width: 700px) { .profile-hero { grid-template-columns: 1fr; gap: 38px; padding-bottom: 40px; }.profile-art { max-width: 440px; width: calc(100% - 12px); margin-inline: auto; }.profile-intro h1 { font-size: 52px; }.concert-section { padding-block: 40px; }.discover-banner { flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; }.discover-banner .button { margin-left: 0; }.archive-details { grid-template-columns: 1fr; gap: 0; }.archive-details details + details { border-top: 0; } }
 @media (max-width: 460px) { .concert-grid { grid-template-columns: 1fr; }.artist-facts dd { font-size: 23px; }.profile-intro h1 { font-size: 44px; }.discover-banner h2 { font-size: 23px; } }
+
+/* Concert maps are rendered in Go; links and forms provide focus without scripts. */
+.concert-map-section { padding-block: 56px 40px; border-bottom: 1px solid var(--line); }
+.map-preview, .map-canvas { position: relative; background-color: #e9eedf; border: 1px solid #d5ddc7; border-radius: 6px; overflow: hidden; }
+.map-preview { min-height: 340px; display: grid; place-items: center; }
+.map-preview > img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: .5; }
+.map-preview-copy { position: relative; text-align: center; padding: 32px; z-index: 1; }
+.map-preview-copy > span { font-size: 40px; }
+.map-preview-copy h3 { font-size: 26px; font-weight: 500; letter-spacing: -1px; margin: 16px 0; }
+.map-preview-copy p { color: #555f48; font-size: 12px; line-height: 1.8; }
+.map-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 18px; }
+.map-toolbar form { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.map-toolbar label { font-size: 11px; font-weight: 600; }
+.map-toolbar select { height: 49px; max-width: 350px; padding: 0 28px 0 12px; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--ink); font-size: 12px; }
+.map-reset { font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }
+.map-feedback, .map-help { color: var(--muted); font-size: 11px; line-height: 1.8; }
+.map-notice { font-size: 12px; line-height: 1.7; border-left: 3px solid #9aa556; background: #e9ecd8; padding: 14px 16px; }
+.map-canvas { background-image: linear-gradient(#d3ddc64a 1px, transparent 1px), linear-gradient(90deg, #d3ddc64a 1px, transparent 1px); background-size: 40px 40px; }
+.concert-map { display: block; width: 100%; aspect-ratio: 2; }
+.map-corner-label { position: absolute; bottom: 12px; left: 16px; background: #e9eedfee; padding: 6px 8px; font-size: 8px; letter-spacing: 1px; pointer-events: none; }
+.map-pin { fill: var(--acid); stroke: #293421; stroke-width: 1px; vector-effect: non-scaling-stroke; }
+.map-pin.is-focused { fill: #20221e; }
+.map-pin-number { fill: #20221e; font-family: var(--font); font-weight: 700; pointer-events: none; }
+.concert-map a:has(.is-focused) .map-pin-number { fill: #d5fa45; }
+.concert-map a:hover .map-pin { fill: #fff; }
+.concert-map a:focus-visible .map-pin { stroke: #000; stroke-width: 3px; }
+.map-attribution { font-size: 9px; color: var(--muted); line-height: 1.8; margin: 12px 0; }
+.map-attribution a { text-decoration: underline; text-underline-offset: 3px; }
+.map-location-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.map-location { display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--line); padding: 16px; border-radius: 4px; min-width: 0; }
+.map-location.is-selected { background: #e7edcf; border-color: #aab976; }
+.location-number { display: grid; place-items: center; background: #e5e9da; border-radius: 50%; width: 28px; height: 28px; flex-shrink: 0; font-size: 10px; }
+.map-location > div { min-width: 0; flex: 1; }
+.map-location h3 { font-size: 13px; font-weight: 500; margin-bottom: 5px; overflow-wrap: anywhere; }
+.map-location h3 a { display: block; padding-block: 5px; }
+.map-location h3 a:hover { text-decoration: underline; }
+.map-location p { font-size: 10px; color: var(--muted); line-height: 1.7; margin-bottom: 3px; }
+.map-location small { color: var(--muted); font-size: 9px; overflow-wrap: anywhere; }
+.map-detail-link { font-size: 9px; white-space: nowrap; padding-block: 7px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 900px) { .map-location-list { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .concert-map-section { padding-top: 40px; }.map-toolbar { flex-direction: column; align-items: flex-start; }.map-toolbar form { width: 100%; }.map-toolbar label { flex-basis: 100%; }.map-toolbar select { min-width: 0; width: 100%; max-width: none; }.map-toolbar .button { width: 100%; }.map-preview { min-height: 310px; }.map-preview-copy h3 { font-size: 23px; }.map-corner-label { font-size: 6px; left: 8px; bottom: 6px; }.map-location { flex-wrap: wrap; }.map-detail-link { margin-left: 40px; }.map-feedback { font-size: 10px; } }
+.map-location .map-match-note { margin-top: 8px; font-size: 10px; line-height: 1.7; color: #5c664c; }

@@ -1,0 +1,1150 @@
+{
+  "generatedAt": "2026-10-02T01:16:27.736Z",
+  "provider": "Photon / OpenStreetMap",
+  "license": "ODbL-1.0",
+  "locations": {
+    "aalborg-denmark": {
+      "latitude": 57.0462626,
+      "longitude": 9.9215263,
+      "matchedPlace": "Aalborg, North Denmark Region, Denmark",
+      "sourceURL": "https://www.openstreetmap.org/node/2247730880"
+    },
+    "aarhus-denmark": {
+      "latitude": 56.1496278,
+      "longitude": 10.2134046,
+      "matchedPlace": "Aarhus, Central Denmark Region, Denmark",
+      "sourceURL": "https://www.openstreetmap.org/node/26559213"
+    },
+    "aberdeen-uk": {
+      "latitude": 57.1482429,
+      "longitude": -2.0928095,
+      "matchedPlace": "Aberdeen, Scotland, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/relation/1900654"
+    },
+    "abu_dhabi-united_arab_emirates": {
+      "latitude": 24.4538352,
+      "longitude": 54.3774014,
+      "matchedPlace": "Abu Dhabi, United Arab Emirates",
+      "sourceURL": "https://www.openstreetmap.org/relation/4479763"
+    },
+    "alabama-usa": {
+      "latitude": 33.2588817,
+      "longitude": -86.8295337,
+      "matchedPlace": "Alabama, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161950"
+    },
+    "amityville-usa": {
+      "latitude": 40.6789893,
+      "longitude": -73.4170673,
+      "matchedPlace": "Amityville, New York, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/175498"
+    },
+    "amsterdam-netherlands": {
+      "latitude": 52.3730796,
+      "longitude": 4.8924534,
+      "matchedPlace": "Amsterdam, North Holland, Netherlands",
+      "sourceURL": "https://www.openstreetmap.org/relation/271110"
+    },
+    "anaheim-usa": {
+      "latitude": 33.8347516,
+      "longitude": -117.911732,
+      "matchedPlace": "Anaheim, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/253985"
+    },
+    "antwerp-belgium": {
+      "latitude": 51.2211097,
+      "longitude": 4.3997081,
+      "matchedPlace": "Antwerp, Belgium",
+      "sourceURL": "https://www.openstreetmap.org/relation/59518"
+    },
+    "arizona-usa": {
+      "latitude": 34.395342,
+      "longitude": -111.763275,
+      "matchedPlace": "Arizona, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/162018"
+    },
+    "arras-france": {
+      "latitude": 50.291048,
+      "longitude": 2.7772211,
+      "matchedPlace": "Arras, Hauts-de-France, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/1121015"
+    },
+    "athens-greece": {
+      "latitude": 37.9755648,
+      "longitude": 23.7348324,
+      "matchedPlace": "Athens, Attica, Greece",
+      "sourceURL": "https://www.openstreetmap.org/node/441183"
+    },
+    "atlanta-usa": {
+      "latitude": 33.7544657,
+      "longitude": -84.3898151,
+      "matchedPlace": "Atlanta, Georgia, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/119557"
+    },
+    "auckland-new_zealand": {
+      "latitude": -36.852095,
+      "longitude": 174.7631803,
+      "matchedPlace": "Auckland, New Zealand",
+      "sourceURL": "https://www.openstreetmap.org/node/292806332"
+    },
+    "bangkok-thailand": {
+      "latitude": 13.7524938,
+      "longitude": 100.4935089,
+      "matchedPlace": "Bangkok, Thailand",
+      "sourceURL": "https://www.openstreetmap.org/relation/92277"
+    },
+    "barcelona-spain": {
+      "latitude": 41.3825802,
+      "longitude": 2.177073,
+      "matchedPlace": "Barcelona, Catalonia, Spain",
+      "sourceURL": "https://www.openstreetmap.org/relation/347950"
+    },
+    "belo_horizonte-brazil": {
+      "latitude": -19.9227318,
+      "longitude": -43.9450948,
+      "matchedPlace": "Belo Horizonte, Minas Gerais, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/relation/368782"
+    },
+    "berlin-germany": {
+      "latitude": 52.5173885,
+      "longitude": 13.3951309,
+      "matchedPlace": "Berlin, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62422"
+    },
+    "berwyn-usa": {
+      "latitude": 41.8505874,
+      "longitude": -87.7936685,
+      "matchedPlace": "Berwyn, Illinois, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/123130"
+    },
+    "bilbao-spain": {
+      "latitude": 43.2630018,
+      "longitude": -2.9350039,
+      "matchedPlace": "Bilbao, Basque Country, Spain",
+      "sourceURL": "https://www.openstreetmap.org/relation/339549"
+    },
+    "birmingham-uk": {
+      "latitude": 52.4796992,
+      "longitude": -1.9026911,
+      "matchedPlace": "Birmingham, England, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/node/17861291"
+    },
+    "bogota-colombia": {
+      "latitude": 4.6533817,
+      "longitude": -74.0836331,
+      "matchedPlace": "Bogota, Bogota, Capital District, Colombia",
+      "sourceURL": "https://www.openstreetmap.org/relation/7426387"
+    },
+    "boston-usa": {
+      "latitude": 42.3588336,
+      "longitude": -71.0578303,
+      "matchedPlace": "Boston, Massachusetts, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/2315704"
+    },
+    "boulogne_billancourt-france": {
+      "latitude": 48.8356649,
+      "longitude": 2.240206,
+      "matchedPlace": "Boulogne-Billancourt, Île-de-France, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/72020"
+    },
+    "brasilia-brazil": {
+      "latitude": -23.3201336,
+      "longitude": -51.1379677,
+      "matchedPlace": "Brasilia, Paraná, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/node/5784559358"
+    },
+    "bratislava-slovakia": {
+      "latitude": 48.1435026,
+      "longitude": 17.1082867,
+      "matchedPlace": "Bratislava, Region of Bratislava, Slovakia",
+      "sourceURL": "https://www.openstreetmap.org/node/530544342"
+    },
+    "brisbane-australia": {
+      "latitude": -27.4689623,
+      "longitude": 153.0235009,
+      "matchedPlace": "Brisbane, Queensland, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/14027280"
+    },
+    "brixton-uk": {
+      "latitude": 51.4633914,
+      "longitude": -0.1148023,
+      "matchedPlace": "Brixton, England, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/node/21521237"
+    },
+    "brooklyn-usa": {
+      "latitude": 40.6526006,
+      "longitude": -73.9497211,
+      "matchedPlace": "Brooklyn, New York, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/9691750"
+    },
+    "budapest-hungary": {
+      "latitude": 47.481849,
+      "longitude": 19.1449053,
+      "matchedPlace": "Budapest, Central Hungary, Hungary",
+      "sourceURL": "https://www.openstreetmap.org/relation/37244"
+    },
+    "buenos_aires-argentina": {
+      "latitude": -34.6095579,
+      "longitude": -58.3887904,
+      "matchedPlace": "Buenos Aires, Autonomous City of Buenos Aires, Argentina",
+      "sourceURL": "https://www.openstreetmap.org/relation/1224652"
+    },
+    "burriana-spain": {
+      "latitude": 39.8876912,
+      "longitude": -0.0846321,
+      "matchedPlace": "Borriana, Valencian Community, Spain",
+      "sourceURL": "https://www.openstreetmap.org/relation/339850",
+      "note": "Burriana is resolved to its Valencian name Borriana."
+    },
+    "burswood-australia": {
+      "latitude": -31.9602196,
+      "longitude": 115.8962701,
+      "matchedPlace": "Burswood, Western Australia, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/11325870"
+    },
+    "california-usa": {
+      "latitude": 36.7014631,
+      "longitude": -118.755997,
+      "matchedPlace": "California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165475"
+    },
+    "canton-usa": {
+      "latitude": 40.7985464,
+      "longitude": -81.3749508,
+      "matchedPlace": "Canton, Ohio, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/182492"
+    },
+    "cardiff-uk": {
+      "latitude": 51.4816546,
+      "longitude": -3.1791934,
+      "matchedPlace": "Cardiff, Wales, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/node/738885245"
+    },
+    "changzhou-china": {
+      "latitude": 31.8122623,
+      "longitude": 119.9691539,
+      "matchedPlace": "Changzhou, Jiangsu Province, China",
+      "sourceURL": "https://www.openstreetmap.org/relation/3429666"
+    },
+    "charlotte-usa": {
+      "latitude": 35.2272086,
+      "longitude": -80.8430827,
+      "matchedPlace": "Charlotte, North Carolina, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/177415"
+    },
+    "chicago-usa": {
+      "latitude": 41.8755616,
+      "longitude": -87.6244212,
+      "matchedPlace": "Chicago, Illinois, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/122604"
+    },
+    "cincinnati-usa": {
+      "latitude": 39.1012809,
+      "longitude": -84.5127405,
+      "matchedPlace": "Cincinnati, Ohio, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/183453"
+    },
+    "cleveland-usa": {
+      "latitude": 41.4996574,
+      "longitude": -81.6936772,
+      "matchedPlace": "Cleveland, Ohio, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/182130"
+    },
+    "colorado-usa": {
+      "latitude": 38.7251776,
+      "longitude": -105.607716,
+      "matchedPlace": "Colorado, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161961"
+    },
+    "columbia-usa": {
+      "latitude": 34.000754,
+      "longitude": -81.0352313,
+      "matchedPlace": "Columbia, South Carolina, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/194000"
+    },
+    "copenhagen-denmark": {
+      "latitude": 55.6867243,
+      "longitude": 12.5700724,
+      "matchedPlace": "Copenhagen, Capital Region of Denmark, Denmark",
+      "sourceURL": "https://www.openstreetmap.org/node/13707878"
+    },
+    "cuxhaven-germany": {
+      "latitude": 53.86878,
+      "longitude": 8.698286,
+      "matchedPlace": "Cuxhaven, Lower Saxony, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/1518688"
+    },
+    "dallas-usa": {
+      "latitude": 32.7762719,
+      "longitude": -96.7968559,
+      "matchedPlace": "Dallas, Texas, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/6571629"
+    },
+    "del_mar-usa": {
+      "latitude": 32.9594891,
+      "longitude": -117.2653146,
+      "matchedPlace": "Del Mar, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/2296283"
+    },
+    "detroit-usa": {
+      "latitude": 42.3315509,
+      "longitude": -83.0466403,
+      "matchedPlace": "Detroit, Michigan, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/134591"
+    },
+    "doha-qatar": {
+      "latitude": 25.3108807,
+      "longitude": 51.5081812,
+      "matchedPlace": "Doha, Qatar",
+      "sourceURL": "https://www.openstreetmap.org/relation/27332"
+    },
+    "dubai-united_arab_emirates": {
+      "latitude": 25.2647227,
+      "longitude": 55.2924146,
+      "matchedPlace": "Dubai, United Arab Emirates",
+      "sourceURL": "https://www.openstreetmap.org/node/31248510"
+    },
+    "dublin-ireland": {
+      "latitude": 53.3493795,
+      "longitude": -6.2605593,
+      "matchedPlace": "Dublin, Ireland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1109531"
+    },
+    "dunedin-new_zealand": {
+      "latitude": -45.8740984,
+      "longitude": 170.5035755,
+      "matchedPlace": "Dunedin, Otago, New Zealand",
+      "sourceURL": "https://www.openstreetmap.org/node/1037917163"
+    },
+    "dusseldorf-germany": {
+      "latitude": 51.2254018,
+      "longitude": 6.7763137,
+      "matchedPlace": "Dusseldorf, North Rhine-Westphalia, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62539"
+    },
+    "eindhoven-netherlands": {
+      "latitude": 51.4392648,
+      "longitude": 5.478633,
+      "matchedPlace": "Eindhoven, North Brabant, Netherlands",
+      "sourceURL": "https://www.openstreetmap.org/relation/296014"
+    },
+    "florence-italy": {
+      "latitude": 43.7697955,
+      "longitude": 11.2556404,
+      "matchedPlace": "Florence, Tuscany, Italy",
+      "sourceURL": "https://www.openstreetmap.org/relation/42602"
+    },
+    "florida-usa": {
+      "latitude": 27.7567667,
+      "longitude": -81.4639835,
+      "matchedPlace": "Florida, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/162050"
+    },
+    "frankfurt-germany": {
+      "latitude": 50.1106444,
+      "longitude": 8.6820917,
+      "matchedPlace": "Frankfurt, Hesse, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62400"
+    },
+    "frauenfeld-switzerland": {
+      "latitude": 47.5561915,
+      "longitude": 8.8963347,
+      "matchedPlace": "Frauenfeld, Thurgau, Switzerland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1684522"
+    },
+    "freyming_merlebach-france": {
+      "latitude": 49.1469437,
+      "longitude": 6.8184829,
+      "matchedPlace": "Freyming-Merlebach, Grand Est, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/115250"
+    },
+    "gdynia-poland": {
+      "latitude": 54.5164982,
+      "longitude": 18.5402738,
+      "matchedPlace": "Gdynia, Pomeranian Voivodeship, Poland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1553148"
+    },
+    "georgia-usa": {
+      "latitude": 32.3293809,
+      "longitude": -83.1137366,
+      "matchedPlace": "Georgia, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161957"
+    },
+    "glasgow-uk": {
+      "latitude": 55.861155,
+      "longitude": -4.2501687,
+      "matchedPlace": "Glasgow, Scotland, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/node/11127374"
+    },
+    "gothenburg-sweden": {
+      "latitude": 57.7072326,
+      "longitude": 11.9670171,
+      "matchedPlace": "Gothenburg, Sweden",
+      "sourceURL": "https://www.openstreetmap.org/node/25930131"
+    },
+    "grand_rapids-usa": {
+      "latitude": 42.9632425,
+      "longitude": -85.6678639,
+      "matchedPlace": "Grand Rapids, Michigan, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/134444"
+    },
+    "groningen-netherlands": {
+      "latitude": 53.2190652,
+      "longitude": 6.5680077,
+      "matchedPlace": "Groningen, Netherlands",
+      "sourceURL": "https://www.openstreetmap.org/relation/409863"
+    },
+    "hamburg-germany": {
+      "latitude": 53.5501721,
+      "longitude": 10.0013165,
+      "matchedPlace": "Hamburg, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62782"
+    },
+    "hershey-usa": {
+      "latitude": 40.2854881,
+      "longitude": -76.6506001,
+      "matchedPlace": "Hershey, Pennsylvania, United States",
+      "sourceURL": "https://www.openstreetmap.org/node/25930002"
+    },
+    "hong_kong-china": {
+      "latitude": 22.2818333,
+      "longitude": 114.1582831,
+      "matchedPlace": "Hong Kong, China",
+      "sourceURL": "https://www.openstreetmap.org/relation/20044132"
+    },
+    "houston-usa": {
+      "latitude": 29.7589382,
+      "longitude": -95.3676974,
+      "matchedPlace": "Houston, Texas, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/2688911"
+    },
+    "huizhou-china": {
+      "latitude": 23.1125153,
+      "longitude": 114.4127007,
+      "matchedPlace": "Huizhou, Guangdong Province, China",
+      "sourceURL": "https://www.openstreetmap.org/relation/3209912"
+    },
+    "illinois-usa": {
+      "latitude": 40.0796606,
+      "longitude": -89.4337288,
+      "matchedPlace": "Illinois, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/122586"
+    },
+    "imola-italy": {
+      "latitude": 44.3535145,
+      "longitude": 11.7141233,
+      "matchedPlace": "Imola, Emilia-Romagna, Italy",
+      "sourceURL": "https://www.openstreetmap.org/relation/43020"
+    },
+    "indianapolis-usa": {
+      "latitude": 39.7683331,
+      "longitude": -86.1583502,
+      "matchedPlace": "Indianapolis, Indiana, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/18438530"
+    },
+    "inglewood-usa": {
+      "latitude": 33.9562003,
+      "longitude": -118.353132,
+      "matchedPlace": "Inglewood, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/112090"
+    },
+    "jakarta-indonesia": {
+      "latitude": -6.1754049,
+      "longitude": 106.827168,
+      "matchedPlace": "Jakarta, Java, Indonesia",
+      "sourceURL": "https://www.openstreetmap.org/relation/6362934"
+    },
+    "kansas_city-usa": {
+      "latitude": 39.100105,
+      "longitude": -94.5781416,
+      "matchedPlace": "Kansas City, Missouri, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/141008"
+    },
+    "klagenfurt-austria": {
+      "latitude": 46.623943,
+      "longitude": 14.3075976,
+      "matchedPlace": "Klagenfurt, Carinthia, Austria",
+      "sourceURL": "https://www.openstreetmap.org/relation/105870"
+    },
+    "krakow-poland": {
+      "latitude": 50.0619474,
+      "longitude": 19.9368564,
+      "matchedPlace": "Krakow, Lesser Poland Voivodeship, Poland",
+      "sourceURL": "https://www.openstreetmap.org/relation/449696"
+    },
+    "la_plata-argentina": {
+      "latitude": -34.9206797,
+      "longitude": -57.9537638,
+      "matchedPlace": "La Plata, Buenos Aires, Argentina",
+      "sourceURL": "https://www.openstreetmap.org/relation/3266014"
+    },
+    "landgraaf-netherlands": {
+      "latitude": 50.9080845,
+      "longitude": 6.0264604,
+      "matchedPlace": "Landgraaf, Limburg, Netherlands",
+      "sourceURL": "https://www.openstreetmap.org/relation/1380240"
+    },
+    "las_vegas-usa": {
+      "latitude": 36.1674263,
+      "longitude": -115.1484131,
+      "matchedPlace": "Las Vegas, Nevada, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/170117"
+    },
+    "lausanne-switzerland": {
+      "latitude": 46.5218269,
+      "longitude": 6.6327025,
+      "matchedPlace": "Lausanne, Vaud, Switzerland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1685018"
+    },
+    "leipzig-germany": {
+      "latitude": 51.3406321,
+      "longitude": 12.3747329,
+      "matchedPlace": "Leipzig, Saxony, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62649"
+    },
+    "lima-peru": {
+      "latitude": -12.0459808,
+      "longitude": -77.0305912,
+      "matchedPlace": "Lima, Department of Lima, Peru",
+      "sourceURL": "https://www.openstreetmap.org/node/4289361265"
+    },
+    "lisbon-portugal": {
+      "latitude": 38.9952469,
+      "longitude": -9.1435928,
+      "matchedPlace": "Lisbon, Portugal",
+      "sourceURL": "https://www.openstreetmap.org/relation/2897141"
+    },
+    "london-uk": {
+      "latitude": 51.5074456,
+      "longitude": -0.1277653,
+      "matchedPlace": "London, England, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/relation/175342"
+    },
+    "los_angeles-usa": {
+      "latitude": 34.0536909,
+      "longitude": -118.242766,
+      "matchedPlace": "Los Angeles, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/207359"
+    },
+    "lyon-france": {
+      "latitude": 45.7578137,
+      "longitude": 4.8320114,
+      "matchedPlace": "Lyon, Auvergne-Rhône-Alpes, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/120965"
+    },
+    "madison-usa": {
+      "latitude": 43.07469,
+      "longitude": -89.3841663,
+      "matchedPlace": "Madison, Wisconsin, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/3352040"
+    },
+    "madrid-spain": {
+      "latitude": 40.416782,
+      "longitude": -3.703507,
+      "matchedPlace": "Madrid, Community of Madrid, Spain",
+      "sourceURL": "https://www.openstreetmap.org/relation/5326784"
+    },
+    "maine-usa": {
+      "latitude": 45.709097,
+      "longitude": -68.8590201,
+      "matchedPlace": "Maine, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/63512"
+    },
+    "manchester-uk": {
+      "latitude": 53.4424618,
+      "longitude": -2.2324547,
+      "matchedPlace": "Manchester, England, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/relation/146656"
+    },
+    "manila-philippines": {
+      "latitude": 14.5904492,
+      "longitude": 120.9803621,
+      "matchedPlace": "Manila, Metro Manila, Philippines",
+      "sourceURL": "https://www.openstreetmap.org/relation/103703"
+    },
+    "mannheim-germany": {
+      "latitude": 49.4892913,
+      "longitude": 8.4673098,
+      "matchedPlace": "Mannheim, Baden-Württemberg, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62691"
+    },
+    "massachusetts-usa": {
+      "latitude": 42.3788774,
+      "longitude": -72.032366,
+      "matchedPlace": "Massachusetts, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/61315"
+    },
+    "melbourne-australia": {
+      "latitude": -37.8142454,
+      "longitude": 144.9631732,
+      "matchedPlace": "Melbourne, Victoria, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/4246124"
+    },
+    "merkers-germany": {
+      "latitude": 50.8241612,
+      "longitude": 10.1176283,
+      "matchedPlace": "Merkers, Thuringia, Germany",
+      "sourceURL": "https://www.openstreetmap.org/node/253240481"
+    },
+    "mexico_city-mexico": {
+      "latitude": 19.3207722,
+      "longitude": -99.1514678,
+      "matchedPlace": "Mexico City, Mexico",
+      "sourceURL": "https://www.openstreetmap.org/relation/1376330"
+    },
+    "michigan-usa": {
+      "latitude": 43.6211955,
+      "longitude": -84.6824346,
+      "matchedPlace": "Michigan, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165789"
+    },
+    "milan-italy": {
+      "latitude": 45.4641943,
+      "longitude": 9.1896346,
+      "matchedPlace": "Milan, Lombardy, Italy",
+      "sourceURL": "https://www.openstreetmap.org/relation/44915"
+    },
+    "minneapolis-usa": {
+      "latitude": 44.9772995,
+      "longitude": -93.2654692,
+      "matchedPlace": "Minneapolis, Minnesota, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/136712"
+    },
+    "minnesota-usa": {
+      "latitude": 45.9896587,
+      "longitude": -94.6113288,
+      "matchedPlace": "Minnesota, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165471"
+    },
+    "minsk-belarus": {
+      "latitude": 53.9024716,
+      "longitude": 27.5618225,
+      "matchedPlace": "Minsk, Belarus",
+      "sourceURL": "https://www.openstreetmap.org/relation/59195"
+    },
+    "missouri-usa": {
+      "latitude": 38.7604815,
+      "longitude": -92.5617875,
+      "matchedPlace": "Missouri, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161638"
+    },
+    "monchengladbach-germany": {
+      "latitude": 51.1947131,
+      "longitude": 6.4353792,
+      "matchedPlace": "Mönchengladbach, North Rhine-Westphalia, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62410"
+    },
+    "monterrey-mexico": {
+      "latitude": 25.6802019,
+      "longitude": -100.315258,
+      "matchedPlace": "Monterrey, Nuevo León, Mexico",
+      "sourceURL": "https://www.openstreetmap.org/node/4145210488"
+    },
+    "montreal-canada": {
+      "latitude": 45.5031824,
+      "longitude": -73.5698065,
+      "matchedPlace": "Montreal, Quebec, Canada",
+      "sourceURL": "https://www.openstreetmap.org/relation/1634158"
+    },
+    "montreal-usa": {
+      "latitude": 37.9689254,
+      "longitude": -92.5921247,
+      "matchedPlace": "Montreal, Missouri, United States",
+      "sourceURL": "https://www.openstreetmap.org/node/151418639",
+      "note": "The API specifies USA and several US places share this name. The displayed match follows that country label; the actual concert venue is uncertain."
+    },
+    "mumbai-india": {
+      "latitude": 19.054999,
+      "longitude": 72.8692035,
+      "matchedPlace": "Mumbai, Maharashtra, India",
+      "sourceURL": "https://www.openstreetmap.org/node/16173235"
+    },
+    "munich-germany": {
+      "latitude": 48.1371079,
+      "longitude": 11.5753822,
+      "matchedPlace": "Munich, Bavaria, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/62428"
+    },
+    "nagoya-japan": {
+      "latitude": 35.1851045,
+      "longitude": 136.8998438,
+      "matchedPlace": "Nagoya, Aichi Prefecture, Japan",
+      "sourceURL": "https://www.openstreetmap.org/relation/4576938"
+    },
+    "napoca-romania": {
+      "latitude": 46.769379,
+      "longitude": 23.5899542,
+      "matchedPlace": "Cluj-Napoca, Romania",
+      "sourceURL": "https://www.openstreetmap.org/relation/3277038",
+      "note": "The abbreviated API name Napoca is resolved to the city Cluj-Napoca."
+    },
+    "nevada-usa": {
+      "latitude": 39.5158825,
+      "longitude": -116.853722,
+      "matchedPlace": "Nevada, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165473"
+    },
+    "new_hampshire-usa": {
+      "latitude": 43.4849133,
+      "longitude": -71.6553992,
+      "matchedPlace": "New Hampshire, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/67213"
+    },
+    "new_orleans-usa": {
+      "latitude": 29.9561422,
+      "longitude": -90.0733934,
+      "matchedPlace": "New Orleans, Louisiana, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/131885"
+    },
+    "new_south_wales-australia": {
+      "latitude": -32.1629594,
+      "longitude": 147.0320469,
+      "matchedPlace": "New South Wales, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/2316593"
+    },
+    "new_york-usa": {
+      "latitude": 40.7127281,
+      "longitude": -74.0060152,
+      "matchedPlace": "New York, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/175905"
+    },
+    "newark-usa": {
+      "latitude": 40.735657,
+      "longitude": -74.1723667,
+      "matchedPlace": "Newark, New Jersey, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/170486"
+    },
+    "nickelsdorf-austria": {
+      "latitude": 47.9403019,
+      "longitude": 17.0661763,
+      "matchedPlace": "Nickelsdorf, Burgenland, Austria",
+      "sourceURL": "https://www.openstreetmap.org/relation/304251"
+    },
+    "nimes-france": {
+      "latitude": 43.8374249,
+      "longitude": 4.3600687,
+      "matchedPlace": "Nîmes, Occitania, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/378685"
+    },
+    "north_carolina-usa": {
+      "latitude": 35.6729639,
+      "longitude": -79.0392919,
+      "matchedPlace": "North Carolina, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/224045"
+    },
+    "noumea-new_caledonia": {
+      "latitude": -22.2745264,
+      "longitude": 166.442419,
+      "matchedPlace": "Noumea, New Caledonia, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/377752",
+      "note": "New Caledonia is indexed under France by the geocoder; the coordinates are in New Caledonia."
+    },
+    "oakland-usa": {
+      "latitude": 37.8044557,
+      "longitude": -122.271356,
+      "matchedPlace": "Oakland, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/2833530"
+    },
+    "oklahoma-usa": {
+      "latitude": 34.9550817,
+      "longitude": -97.2684063,
+      "matchedPlace": "Oklahoma, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161645"
+    },
+    "omaha-usa": {
+      "latitude": 41.2587459,
+      "longitude": -95.9383758,
+      "matchedPlace": "Omaha, Nebraska, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/169759"
+    },
+    "oregon-usa": {
+      "latitude": 43.9792797,
+      "longitude": -120.737257,
+      "matchedPlace": "Oregon, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165476"
+    },
+    "osaka-japan": {
+      "latitude": 34.6937569,
+      "longitude": 135.5014539,
+      "matchedPlace": "Osaka, Osaka Prefecture, Japan",
+      "sourceURL": "https://www.openstreetmap.org/relation/358674"
+    },
+    "oslo-norway": {
+      "latitude": 59.9133301,
+      "longitude": 10.7389701,
+      "matchedPlace": "Oslo, Norway",
+      "sourceURL": "https://www.openstreetmap.org/relation/406091"
+    },
+    "ostrava-czechia": {
+      "latitude": 49.8354045,
+      "longitude": 18.292978,
+      "matchedPlace": "Ostrava, Moravian-Silesian Region, Czechia",
+      "sourceURL": "https://www.openstreetmap.org/relation/437354"
+    },
+    "oulu-finland": {
+      "latitude": 65.0117914,
+      "longitude": 25.4701973,
+      "matchedPlace": "Oulu, North Ostrobothnia, Finland",
+      "sourceURL": "https://www.openstreetmap.org/relation/2711874"
+    },
+    "pagney_derriere_barine-france": {
+      "latitude": 48.6943,
+      "longitude": 5.8447,
+      "matchedPlace": "Pagney-derrière-Barine, Grand Est, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/2259739"
+    },
+    "papeete-french_polynesia": {
+      "latitude": -17.5373835,
+      "longitude": -149.5659964,
+      "matchedPlace": "Papeete, French Polynesia, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/5829526",
+      "note": "French Polynesia is indexed under France by the geocoder; the coordinates are in French Polynesia."
+    },
+    "paris-france": {
+      "latitude": 48.8534951,
+      "longitude": 2.3483915,
+      "matchedPlace": "Paris, Île-de-France, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/71525"
+    },
+    "pennsylvania-usa": {
+      "latitude": 40.9699889,
+      "longitude": -77.7278831,
+      "matchedPlace": "Pennsylvania, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/162109"
+    },
+    "penrose-new_zealand": {
+      "latitude": -36.9111443,
+      "longitude": 174.8147813,
+      "matchedPlace": "Penrose, Auckland, New Zealand",
+      "sourceURL": "https://www.openstreetmap.org/node/62201548"
+    },
+    "philadelphia-usa": {
+      "latitude": 39.9527237,
+      "longitude": -75.1635262,
+      "matchedPlace": "Philadelphia, Pennsylvania, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/188022"
+    },
+    "pico_rivera-usa": {
+      "latitude": 33.9830688,
+      "longitude": -118.096735,
+      "matchedPlace": "Pico Rivera, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/2312930"
+    },
+    "pittsburgh-usa": {
+      "latitude": 40.4406968,
+      "longitude": -80.0025666,
+      "matchedPlace": "Pittsburgh, Pennsylvania, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/188553"
+    },
+    "playa_del_carmen-mexico": {
+      "latitude": 20.6462848,
+      "longitude": -87.0807866,
+      "matchedPlace": "Playa del Carmen, Quintana Roo, Mexico",
+      "sourceURL": "https://www.openstreetmap.org/relation/6329645"
+    },
+    "porto_alegre-brazil": {
+      "latitude": -30.1009166,
+      "longitude": -51.1887882,
+      "matchedPlace": "Porto Alegre, Rio Grande do Sul, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/relation/242397"
+    },
+    "prague-czechia": {
+      "latitude": 50.0874654,
+      "longitude": 14.4212535,
+      "matchedPlace": "Prague, Czechia",
+      "sourceURL": "https://www.openstreetmap.org/relation/435514"
+    },
+    "quebec-canada": {
+      "latitude": 52.4760892,
+      "longitude": -71.8258668,
+      "matchedPlace": "Quebec, Canada",
+      "sourceURL": "https://www.openstreetmap.org/relation/61549"
+    },
+    "queensland-australia": {
+      "latitude": -22.1646782,
+      "longitude": 144.5844903,
+      "matchedPlace": "Queensland, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/2316595"
+    },
+    "recife-brazil": {
+      "latitude": -8.0584933,
+      "longitude": -34.8848193,
+      "matchedPlace": "Recife, Pernambuco, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/relation/303585"
+    },
+    "rio_de_janeiro-brazil": {
+      "latitude": -22.9110137,
+      "longitude": -43.2093727,
+      "matchedPlace": "Rio de Janeiro, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/relation/2697338"
+    },
+    "riyadh-saudi_arabia": {
+      "latitude": 24.638916,
+      "longitude": 46.7160104,
+      "matchedPlace": "Riyadh, Saudi Arabia",
+      "sourceURL": "https://www.openstreetmap.org/node/315358390"
+    },
+    "rosemont-usa": {
+      "latitude": 41.9941334,
+      "longitude": -87.8756737,
+      "matchedPlace": "Rosemont, Illinois, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/5728807"
+    },
+    "rotselaar-belgium": {
+      "latitude": 50.9514713,
+      "longitude": 4.7094054,
+      "matchedPlace": "Rotselaar, Flemish Brabant, Belgium",
+      "sourceURL": "https://www.openstreetmap.org/relation/214462"
+    },
+    "saitama-japan": {
+      "latitude": 35.8616141,
+      "longitude": 139.6455666,
+      "matchedPlace": "Saitama, Saitama Prefecture, Japan",
+      "sourceURL": "https://www.openstreetmap.org/relation/1767047"
+    },
+    "salem-germany": {
+      "latitude": 53.6563082,
+      "longitude": 10.8253152,
+      "matchedPlace": "Salem, Schleswig-Holstein, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/1476157",
+      "note": "Several German places are named Salem. The displayed region is the geocoder’s first exact match; the API does not specify a region or venue."
+    },
+    "san_francisco-usa": {
+      "latitude": 37.7879363,
+      "longitude": -122.4075201,
+      "matchedPlace": "San Francisco, California, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/111968"
+    },
+    "san_isidro-argentina": {
+      "latitude": -34.4739792,
+      "longitude": -58.5264866,
+      "matchedPlace": "San Isidro, Buenos Aires, Argentina",
+      "sourceURL": "https://www.openstreetmap.org/relation/1877221"
+    },
+    "san_jose-costa_rica": {
+      "latitude": 9.9327707,
+      "longitude": -84.0796144,
+      "matchedPlace": "San José, San Jose Province, Costa Rica",
+      "sourceURL": "https://www.openstreetmap.org/relation/19827540"
+    },
+    "santiago-chile": {
+      "latitude": -33.4376995,
+      "longitude": -70.6510671,
+      "matchedPlace": "Santiago, Santiago Metropolitan Region, Chile",
+      "sourceURL": "https://www.openstreetmap.org/node/50016356"
+    },
+    "sanya-china": {
+      "latitude": 18.2534658,
+      "longitude": 109.5034392,
+      "matchedPlace": "Sanya, Hainan, China",
+      "sourceURL": "https://www.openstreetmap.org/relation/2128284"
+    },
+    "sao_paulo-brazil": {
+      "latitude": -22.0702705,
+      "longitude": -48.4333875,
+      "matchedPlace": "São Paulo, Brazil",
+      "sourceURL": "https://www.openstreetmap.org/relation/298204"
+    },
+    "scheessel-germany": {
+      "latitude": 53.1667961,
+      "longitude": 9.4840648,
+      "matchedPlace": "Scheeßel, Lower Saxony, Germany",
+      "sourceURL": "https://www.openstreetmap.org/relation/357189"
+    },
+    "seattle-usa": {
+      "latitude": 47.6038321,
+      "longitude": -122.330062,
+      "matchedPlace": "Seattle, Washington, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/237385"
+    },
+    "seoul-south_korea": {
+      "latitude": 37.5666791,
+      "longitude": 126.9782914,
+      "matchedPlace": "Seoul, South Korea",
+      "sourceURL": "https://www.openstreetmap.org/relation/2297418"
+    },
+    "seville-spain": {
+      "latitude": 37.3886303,
+      "longitude": -5.9953403,
+      "matchedPlace": "Seville, Andalusia, Spain",
+      "sourceURL": "https://www.openstreetmap.org/relation/342563"
+    },
+    "sion-switzerland": {
+      "latitude": 46.2311749,
+      "longitude": 7.3588795,
+      "matchedPlace": "Sion, Valais/Wallis, Switzerland",
+      "sourceURL": "https://www.openstreetmap.org/relation/2757528"
+    },
+    "skanderborg-denmark": {
+      "latitude": 56.0351868,
+      "longitude": 9.9317878,
+      "matchedPlace": "Skanderborg, Central Denmark Region, Denmark",
+      "sourceURL": "https://www.openstreetmap.org/node/26559266"
+    },
+    "sochaux-france": {
+      "latitude": 47.5138641,
+      "longitude": 6.8305344,
+      "matchedPlace": "Sochaux, Bourgogne – Franche-Comté, France",
+      "sourceURL": "https://www.openstreetmap.org/relation/123561"
+    },
+    "south_carolina-usa": {
+      "latitude": 33.6874388,
+      "longitude": -80.4363743,
+      "matchedPlace": "South Carolina, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/224040"
+    },
+    "st_gallen-switzerland": {
+      "latitude": 47.425618,
+      "longitude": 9.3762397,
+      "matchedPlace": "St. Gallen, Switzerland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1683941"
+    },
+    "st_louis-usa": {
+      "latitude": 38.6254063,
+      "longitude": -90.190009,
+      "matchedPlace": "Saint Louis, Missouri, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/1180533"
+    },
+    "stockholm-sweden": {
+      "latitude": 59.3251172,
+      "longitude": 18.0710935,
+      "matchedPlace": "Stockholm, Sweden",
+      "sourceURL": "https://www.openstreetmap.org/node/25929985"
+    },
+    "sydney-australia": {
+      "latitude": -33.8698439,
+      "longitude": 151.2082848,
+      "matchedPlace": "Sydney, New South Wales, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/5750005"
+    },
+    "taipei-taiwan": {
+      "latitude": 25.0375198,
+      "longitude": 121.5636796,
+      "matchedPlace": "Taipei, Taiwan",
+      "sourceURL": "https://www.openstreetmap.org/relation/1293250"
+    },
+    "texas-usa": {
+      "latitude": 31.2638905,
+      "longitude": -98.5456116,
+      "matchedPlace": "Texas, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/114690"
+    },
+    "toronto-canada": {
+      "latitude": 43.6534817,
+      "longitude": -79.3839347,
+      "matchedPlace": "Toronto, Ontario, Canada",
+      "sourceURL": "https://www.openstreetmap.org/relation/324211"
+    },
+    "toronto-usa": {
+      "latitude": 41.9048584,
+      "longitude": -90.8640346,
+      "matchedPlace": "Toronto, Iowa, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/128413",
+      "note": "The API specifies USA and several US places share this name. The displayed match follows that country label; the actual concert venue is uncertain."
+    },
+    "turku-finland": {
+      "latitude": 60.4515932,
+      "longitude": 22.2669991,
+      "matchedPlace": "Turku, Southwest Finland, Finland",
+      "sourceURL": "https://www.openstreetmap.org/relation/399906"
+    },
+    "uniondale-usa": {
+      "latitude": 40.7095827,
+      "longitude": -73.592341,
+      "matchedPlace": "Uniondale, New York, United States",
+      "sourceURL": "https://www.openstreetmap.org/node/158810686"
+    },
+    "utah-usa": {
+      "latitude": 39.4225192,
+      "longitude": -111.714358,
+      "matchedPlace": "Utah, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/161993"
+    },
+    "vancouver-canada": {
+      "latitude": 49.2608724,
+      "longitude": -123.113952,
+      "matchedPlace": "Vancouver, British Columbia, Canada",
+      "sourceURL": "https://www.openstreetmap.org/relation/1852574"
+    },
+    "victoria-australia": {
+      "latitude": -36.5986096,
+      "longitude": 144.6780052,
+      "matchedPlace": "Victoria, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/2316741"
+    },
+    "vienna-austria": {
+      "latitude": 48.2083537,
+      "longitude": 16.3725042,
+      "matchedPlace": "Vienna, Austria",
+      "sourceURL": "https://www.openstreetmap.org/relation/109166"
+    },
+    "warsaw-poland": {
+      "latitude": 52.2319581,
+      "longitude": 21.0067249,
+      "matchedPlace": "Warsaw, Masovian Voivodeship, Poland",
+      "sourceURL": "https://www.openstreetmap.org/relation/336075"
+    },
+    "washington-usa": {
+      "latitude": 47.2868352,
+      "longitude": -120.212613,
+      "matchedPlace": "Washington, United States",
+      "sourceURL": "https://www.openstreetmap.org/relation/165479",
+      "note": "The API does not distinguish Washington state from Washington, DC. The displayed match is Washington state."
+    },
+    "wellington-new_zealand": {
+      "latitude": -41.2887953,
+      "longitude": 174.7772114,
+      "matchedPlace": "Wellington, New Zealand",
+      "sourceURL": "https://www.openstreetmap.org/node/204648"
+    },
+    "werchter-belgium": {
+      "latitude": 50.970584,
+      "longitude": 4.6937963,
+      "matchedPlace": "Werchter, Flemish Brabant, Belgium",
+      "sourceURL": "https://www.openstreetmap.org/relation/2999936"
+    },
+    "west_melbourne-australia": {
+      "latitude": -37.808747,
+      "longitude": 144.9238207,
+      "matchedPlace": "West Melbourne, Victoria, Australia",
+      "sourceURL": "https://www.openstreetmap.org/relation/2398105"
+    },
+    "westcliff_on_sea-uk": {
+      "latitude": 51.5428858,
+      "longitude": 0.6859213,
+      "matchedPlace": "Westcliff-on-Sea, England, United Kingdom",
+      "sourceURL": "https://www.openstreetmap.org/node/598377241"
+    },
+    "willemstad-netherlands_antilles": {
+      "latitude": 12.1066695,
+      "longitude": -68.9351307,
+      "matchedPlace": "Willemstad, Curacao, Netherlands",
+      "sourceURL": "https://www.openstreetmap.org/relation/11905868",
+      "note": "The API uses the former Netherlands Antilles name; this match is Willemstad on Curacao."
+    },
+    "windsor-canada": {
+      "latitude": 42.3167397,
+      "longitude": -83.0373389,
+      "matchedPlace": "Windsor, Ontario, Canada",
+      "sourceURL": "https://www.openstreetmap.org/node/253421090"
+    },
+    "yogyakarta-indonesia": {
+      "latitude": -7.801349,
+      "longitude": 110.3647351,
+      "matchedPlace": "Yogyakarta, Special Region of Yogyakarta, Indonesia",
+      "sourceURL": "https://www.openstreetmap.org/relation/5615250"
+    },
+    "zaragoza-spain": {
+      "latitude": 41.6521342,
+      "longitude": -0.8809428,
+      "matchedPlace": "Zaragoza, Aragon, Spain",
+      "sourceURL": "https://www.openstreetmap.org/node/266776249"
+    },
+    "zurich-switzerland": {
+      "latitude": 47.3744489,
+      "longitude": 8.5410422,
+      "matchedPlace": "Zurich, Switzerland",
+      "sourceURL": "https://www.openstreetmap.org/relation/1682248"
+    }
+  }
+}

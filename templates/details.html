@@ -17,6 +17,7 @@
                 <a href="#concerts" class="button button-dark">Explore concert history <span aria-hidden="true">↓</span></a>
             </div>
         </section>
+        {{template "concert-map" .}}
         <section class="concert-section" id="concerts" aria-labelledby="concert-title">
             <div class="section-heading"><div><p class="eyebrow">WHERE THE MUSIC WENT</p><h2 id="concert-title">Across the map<span class="accent-dot">.</span></h2></div><span class="collection-total">{{len .Relation.DatesLocations}} LOCATIONS IN THE ARCHIVE</span></div>
             <p class="archive-note">A look through the concert archive. Locations and dates are supplied by the artist API.</p>
