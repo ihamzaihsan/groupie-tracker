@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost:8080/assets/styles3.css">
-    <link src="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="icon" href="http://localhost:8080/assets/favicon.png" type="image/icon type">
-    <title>Error</title>
-</head>
+<head>{{template "head"}}<title>{{.Code}} — Groupie Tracker</title><link rel="stylesheet" href="/assets/styles3.css"></head>
 <body>
-    <a href="/"> <button class="back-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#e8eaed"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg> Back to Home</button></a>
-    <div class="Shinycornerleft"></div>
-    <div class="Shinycornerright"></div>
-    <div class="errorred">
-    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2xyY3psNTRvOHFpaThyeDZhbWlmOXA3MjNlc3prMWJ5cTdkc2g5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JxxkWxHOEDrq0/giphy.gif">
-    <h1 class="text">  {{.Code}} </h1>
-    <h2 class="text"> {{.ErrorMsg}} </h2>
-    </div>
-
+    {{template "header"}}
+    <main id="main" class="error-page wrap"><p class="eyebrow">A LITTLE INTERRUPTION</p><div class="error-code">{{.Code}}<span aria-hidden="true">✳</span></div><h1>{{if eq .Code 404}}This track is missing.{{else if eq .Code 502}}A little silence between tracks.{{else}}Let’s find the right groove.{{end}}</h1><p>{{.ErrorMsg}}</p><a href="/" class="button button-dark">Back to the collection <span aria-hidden="true">↗</span></a></main>
+    {{template "footer"}}
 </body>
 </html>

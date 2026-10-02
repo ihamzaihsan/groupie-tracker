@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Groupie Tracker</title>
-<link rel="stylesheet" href="/assets/styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    {{template "head"}}
+    <title>Groupie Tracker — Find your next obsession</title>
+    <meta name="description" content="Explore the artists, band members, albums and concert histories behind the music you love.">
+    <link rel="stylesheet" href="/assets/styles.css">
 </head>
-
 <body>
-    <div class="Shinycornerleft"></div>
-    <div class="Shinycornerright"></div>
-
-    <div class="container">
-        <div class="icon">
-            <div class="music-note"></div>
-            <div class="music-note"></div>
-            <div class="music-note"></div>
-        </div>
-    </div>
-    <div class="Title"> 👩‍🎤 Artists List 👨‍🎤</div>
-
-<div class="card-container">
-    {{range .}}
-    <a href="/artist/{{.ID}}" class="card-link">
-        <div class="card">
-            <div class="card-content">
-                <div class="word"> {{.Name}}</div>   
-            </div> 
-            <div>
-            <img src={{.Image}} class="pic">
-        </div>
-        </div>
-    </a>    
-    {{end}}
-</div>
+    {{template "header"}}
+    <main id="main">
+        <section class="hero wrap" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> FOR THE LOVE OF MUSIC</p>
+                <h1 id="hero-title">Find your next<br><span class="serif-word">obsession.</span><span class="hero-asterisk" aria-hidden="true">✳</span></h1>
+                <p class="hero-description">The icons. The hidden gems. The stories behind the sound.<br class="desktop-break"> Get to know the artists that make you feel something.</p>
+                <a href="#collection" class="button button-dark">Dig into the collection <span aria-hidden="true">↗</span></a>
+                <div class="hero-footnote"><span class="tiny-record" aria-hidden="true"></span><span>{{.Total}} artists. Countless rabbit holes.</span></div>
+            </div>
+            <div class="record-scene" aria-label="A vinyl record illustration">
+                <div class="scene-grid" aria-hidden="true"></div>
+                <span class="scene-label">THE GROUPIE COLLECTION / VOL. 01</span>
+                <span class="scene-star" aria-hidden="true">✳</span>
+                <div class="record-sleeve" aria-hidden="true"><span>TURN IT<br>ALL THE<br>WAY UP.</span><small>GOOD MUSIC LIVES HERE.</small></div>
+                <div class="vinyl" aria-hidden="true"><div class="vinyl-label"><span>GROUPIE</span><b>g.</b><small>SIDE A · 33⅓ RPM</small></div></div>
+                <div class="scene-caption"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div>Made for the curious.<small>Discover what’s behind the record.</small></div><span aria-hidden="true">↗</span></div>
+            </div>
+        </section>
+        <div class="genre-strip" aria-hidden="true"><div>LEGENDS & NEW OBSESSIONS <span>✳</span> THE STORIES BEHIND THE SOUND <span>✳</span> YOUR BACKSTAGE PASS <span>✳</span> LEGENDS & NEW OBSESSIONS <span>✳</span></div></div>
+        <section class="collection wrap" id="collection" aria-labelledby="collection-title">
+            <div class="section-heading"><div><p class="eyebrow">THE PEOPLE BEHIND THE PLAYLIST</p><h2 id="collection-title">Meet the artists<span class="accent-dot">.</span></h2></div><span class="collection-total">{{.Total}} ARTISTS IN THE COLLECTION</span></div>
+            <div class="results-row"><p>{{.Total}} artists to discover</p><span>FIND YOUR FREQUENCY</span></div>
+            <div class="artist-grid" id="artist-grid">
+                {{range .Artists}}
+                <a href="/artist/{{.ID}}" class="artist-card">
+                    <div class="card-art"><img src="{{.Image}}" alt="{{.Name}}" loading="lazy" width="400" height="400"><span class="card-number">NO. {{printf "%02d" .ID}}</span><span class="card-open" aria-hidden="true">↗</span><span class="card-image-label">GET TO KNOW THE ARTIST</span></div>
+                    <div class="card-info"><div><h3>{{.Name}}</h3><p>EST. {{.CreationDate}} <span>·</span> {{len .Members}} {{if eq (len .Members) 1}}member{{else}}members{{end}}</p></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+                </a>
+                {{else}}<div class="empty-state"><h3>The collection is quiet.</h3><p>No artist data is available right now.</p></div>{{end}}
+            </div>
+            <div class="collection-end"><span aria-hidden="true">✳</span><p>There’s always another artist to fall in love with.</p><a href="#main">Back to the top ↑</a></div>
+        </section>
+    </main>
+    {{template "footer"}}
 </body>
 </html>

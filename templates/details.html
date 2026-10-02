@@ -1,87 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{.Artist.Name}}</title>
+    {{template "head"}}
+    <title>{{.Artist.Name}} — Groupie Tracker</title>
     <link rel="stylesheet" href="/assets/styles2.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter+Brush&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-        .text-white {
-            display: inline-flex;
-
-        }
-    </style>
 </head>
 <body>
-    <div class="Shinycornerleft"></div>
-    <div class="Shinycornerright"></div>
-    <div class="container">
-        <div class="icon">
-            <div class="music-note"></div>
-            <div class="music-note"></div>
-            <div class="music-note"></div>
-        </div>
-    </div>
-    <div class="Title">🎸 Artist Details</div>
-    <a href="/"> <button  class="back-button-container">Home</button></a>
-
-    <div class="Group">
-        <img src="{{.Artist.Image}}">
-        <div>
-            <h1 class="title">  {{.Artist.Name}}</h1>
-            <div clas="words">
-            <p class="headline"><strong>Created:</strong></p>
-               <p class="text">{{.Artist.CreationDate}} 
+    {{template "header"}}
+    <main id="main" class="profile wrap">
+        <a href="/#collection" class="back-link">← Back to the collection</a>
+        <section class="profile-hero" aria-labelledby="artist-name">
+            <div class="profile-art"><span class="art-label">THE ARTIST / NO. {{printf "%02d" .Artist.ID}}</span><img src="{{.Artist.Image}}" alt="{{.Artist.Name}}" width="600" height="600"><div class="art-bottom"><span>ORIGINAL SOUNDS. LASTING IMPACT.</span><span aria-hidden="true">✳</span></div></div>
+            <div class="profile-intro"><p class="eyebrow"><span class="status-dot"></span> INSIDE THE COLLECTION</p><h1 id="artist-name">{{.Artist.Name}}<span class="accent-dot">.</span></h1><p class="profile-subtitle">Behind the name. Beyond the music.</p>
+                <dl class="artist-facts"><div><dt>ON THE SCENE SINCE</dt><dd>{{.Artist.CreationDate}}</dd></div><div><dt>FIRST ALBUM RELEASE</dt><dd>{{date .Artist.FirstAlbum}}</dd></div></dl>
+                <div class="member-section"><h2>The lineup <span>{{len .Artist.Members}}</span></h2><ul class="member-list">{{range .Artist.Members}}<li>{{.}}</li>{{else}}<li>No members available</li>{{end}}</ul></div>
+                <a href="#concerts" class="button button-dark">Explore concert history <span aria-hidden="true">↓</span></a>
             </div>
-            <p class="headline"><strong>First album released:</strong></p>
-            <p class="text">{{.Artist.FirstAlbum}}</p>
-            <p class="headline"><strong>Members:</strong></p>
-            <p class="text"> {{range .Artist.Members}}{{.}}, {{end}} </p>
-            <p class="headline"><strong>Location:</strong> </p>
-                <p class="text">
-                {{range .ProcessedLocations}}
-                    {{.}} 
-                {{end}}
-            </p>
-            <p class="headline" ><strong>Date:</strong> </p>
-                <p class="text">{{range .ProcessedDates}}
-                    {{.}} 
-                {{end}}
-            </p>
-            <table class="besttable">
-                <thead>
-                    <tr class="tableheadings">
-                        <div>
- 
-                        <th >                             <span class="material-symbols-outlined">
-                            location_on
-                            </span> <p class="theadline">Location</p>                     
-                        </th>
-                        </div>
-                        <th><span class="material-symbols-outlined">
-                            calendar_month
-                            </span>  <p class="theadline">Date</p>        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{range $location, $dates := .Relation.DatesLocations}}
-                    {{range $dates}}
-                    <tr>
-                        <td class="ttext">{{$location}}</td>
-                        <td class="ttext" >{{.}}</td>
-                    </tr>
-                    {{end}}
-                    {{end}}
-                </tbody>
-            </table>
-        </div>
-    </div>
+        </section>
+        <section class="concert-section" id="concerts" aria-labelledby="concert-title">
+            <div class="section-heading"><div><p class="eyebrow">WHERE THE MUSIC WENT</p><h2 id="concert-title">Across the map<span class="accent-dot">.</span></h2></div><span class="collection-total">{{len .Relation.DatesLocations}} LOCATIONS IN THE ARCHIVE</span></div>
+            <p class="archive-note">A look through the concert archive. Locations and dates are supplied by the artist API.</p>
+            <div class="concert-grid">{{range $location, $dates := .Relation.DatesLocations}}<article class="concert-ticket"><div class="ticket-top"><span>CONCERT ARCHIVE</span><span aria-hidden="true">↗</span></div><h3>{{location $location}}</h3><div class="ticket-rule" aria-hidden="true"></div><div class="ticket-dates"><span class="eyebrow">RECORDED DATES</span><ul>{{range $dates}}<li>{{date .}}</li>{{else}}<li>No dates recorded</li>{{end}}</ul></div><div class="ticket-bottom"><span>{{len $dates}} {{if eq (len $dates) 1}}DATE{{else}}DATES{{end}}</span><span class="barcode" aria-hidden="true"></span></div></article>{{else}}<div class="empty-state"><h3>The archive is quiet.</h3><p>No concert information is available for this artist.</p></div>{{end}}</div>
+            <div class="archive-details"><details><summary>All recorded locations <span>{{len .ProcessedLocations}}</span></summary><ul>{{range .ProcessedLocations}}<li>{{location .}}</li>{{else}}<li>No locations available.</li>{{end}}</ul></details><details><summary>All recorded dates <span>{{len .ProcessedDates}}</span></summary><ul>{{range .ProcessedDates}}<li>{{date .}}</li>{{else}}<li>No dates available.</li>{{end}}</ul></details></div>
+        </section>
+        <aside class="discover-banner"><span aria-hidden="true">✳</span><div><p class="eyebrow">KEEP THE GOOD MUSIC GOING</p><h2>Your next favorite is out there.</h2></div><a href="/#collection" class="button button-dark">Explore more artists ↗</a></aside>
+    </main>
+    {{template "footer"}}
 </body>
 </html>
