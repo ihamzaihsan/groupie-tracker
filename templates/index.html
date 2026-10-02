@@ -29,14 +29,22 @@
         <div class="genre-strip" aria-hidden="true"><div>LEGENDS & NEW OBSESSIONS <span>✳</span> THE STORIES BEHIND THE SOUND <span>✳</span> YOUR BACKSTAGE PASS <span>✳</span> LEGENDS & NEW OBSESSIONS <span>✳</span></div></div>
         <section class="collection wrap" id="collection" aria-labelledby="collection-title">
             <div class="section-heading"><div><p class="eyebrow">THE PEOPLE BEHIND THE PLAYLIST</p><h2 id="collection-title">Meet the artists<span class="accent-dot">.</span></h2></div><span class="collection-total">{{.Total}} ARTISTS IN THE COLLECTION</span></div>
-            <div class="results-row"><p>{{.Total}} artists to discover</p><span>FIND YOUR FREQUENCY</span></div>
-            <div class="artist-grid" id="artist-grid">
+            <form class="collection-tools" id="collection-tools" action="/#collection" method="get" role="search">
+                <label class="search-field"><span aria-hidden="true">⌕</span><span class="sr-only">Search artists, members, locations, album dates or creation years</span><input id="artist-search" name="q" type="search" value="{{.Query}}" list="search-suggestions" placeholder="Artist, member, location, album date or year…" maxlength="200" aria-describedby="search-help" autocomplete="off" accesskey="s"></label>
+                <datalist id="search-suggestions">{{range .Suggestions}}<option value="{{.Input}}">{{.Value}} — {{.Category}}</option>{{end}}</datalist>
+                <label class="select-field"><span class="sr-only">Sort artists</span><select name="sort"><option value="original" {{if eq .Sort "original"}}selected{{end}}>Original order</option><option value="name" {{if eq .Sort "name"}}selected{{end}}>Name: A–Z</option><option value="oldest" {{if eq .Sort "oldest"}}selected{{end}}>Earliest formation</option><option value="newest" {{if eq .Sort "newest"}}selected{{end}}>Latest formation</option></select></label>
+                <label class="select-field"><span class="sr-only">Collection layout</span><select name="view"><option value="grid" {{if eq .View "grid"}}selected{{end}}>Grid view</option><option value="list" {{if eq .View "list"}}selected{{end}}>List view</option></select></label>
+                <button type="submit" class="button button-dark">Search <span aria-hidden="true">↗</span></button>
+            </form>
+            <p id="search-help" class="search-help">Search by name, member, location, first album date or creation year. Suggestions show their category. Press Enter or Search to see results.</p>
+            <div class="results-row"><p id="result-count" role="status">{{if .Query}}{{len .Artists}} {{if eq (len .Artists) 1}}artist{{else}}artists{{end}} found for “{{.Query}}”{{else}}{{.Total}} artists to discover{{end}}</p>{{if .Query}}<a class="reset-search" href="/?sort={{.Sort}}&amp;view={{.View}}#collection">Clear search ×</a>{{else}}<span>FIND YOUR FREQUENCY <span aria-hidden="true">↓</span></span>{{end}}</div>
+            <div class="artist-grid{{if eq .View "list"}} is-list{{end}}" id="artist-grid">
                 {{range .Artists}}
                 <a href="/artist/{{.ID}}" class="artist-card">
                     <div class="card-art"><img src="{{.Image}}" alt="{{.Name}}" loading="lazy" width="400" height="400"><span class="card-number">NO. {{printf "%02d" .ID}}</span><span class="card-open" aria-hidden="true">↗</span><span class="card-image-label">GET TO KNOW THE ARTIST</span></div>
                     <div class="card-info"><div><h3>{{.Name}}</h3><p>EST. {{.CreationDate}} <span>·</span> {{len .Members}} {{if eq (len .Members) 1}}member{{else}}members{{end}}</p></div><span class="card-arrow" aria-hidden="true">↗</span></div>
                 </a>
-                {{else}}<div class="empty-state"><h3>The collection is quiet.</h3><p>No artist data is available right now.</p></div>{{end}}
+                {{else}}<div class="empty-state"><span aria-hidden="true">&#9678;</span>{{if $.Query}}<h3>No artists on this frequency.</h3><p>{{if $.Query}}No matches for &ldquo;{{$.Query}}&rdquo; with these selections.{{else}}No artists match these selections.{{end}} Try widening the date ranges or choosing other members and places.</p><a class="button button-dark" href="/?sort={{$.Sort}}&amp;view={{$.View}}#collection">Clear search &#8599;</a>{{else}}<h3>The collection is quiet.</h3><p>No artist data is available right now. Come back soon.</p>{{end}}</div>{{end}}
             </div>
             <div class="collection-end"><span aria-hidden="true">✳</span><p>There’s always another artist to fall in love with.</p><a href="#main">Back to the top ↑</a></div>
         </section>

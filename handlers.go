@@ -108,12 +108,7 @@ func (app *application) artists(w http.ResponseWriter, r *http.Request) {
 	if !app.allowGet(w, r) {
 		return
 	}
-	var artists []Artist
-	if err := app.api.fetch(r.Context(), "/artists", &artists); err != nil {
-		app.apiFailure(w, err)
-		return
-	}
-	app.render(w, http.StatusOK, "index.html", collectionPageData{Artists: artists, Total: len(artists)})
+	app.searchArtists(w, r)
 }
 
 func (app *application) artistDetails(w http.ResponseWriter, r *http.Request) {
@@ -187,9 +182,4 @@ func (app *application) artistDetails(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	app.render(w, http.StatusOK, "details.html", data)
-}
-
-type collectionPageData struct {
-	Artists []Artist
-	Total   int
 }
