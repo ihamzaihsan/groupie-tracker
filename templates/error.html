@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>{{template "head"}}<title>{{.Code}} — Groupie Tracker</title><link rel="stylesheet" href="/assets/styles3.css"></head>
+<head>{{template "head"}}<title>{{.Code}} — Concert Atlas</title><link rel="stylesheet" href="/assets/styles3.css"></head>
 <body>
     {{template "header"}}
     <main id="main" class="error-page wrap"><p class="eyebrow">A LITTLE INTERRUPTION</p><div class="error-code">{{.Code}}<span aria-hidden="true">✳</span></div><h1>{{if eq .Code 404}}This track is missing.{{else if eq .Code 502}}A little silence between tracks.{{else}}Let’s find the right groove.{{end}}</h1><p>{{.ErrorMsg}}</p><a href="/" class="button button-dark">Back to the collection <span aria-hidden="true">↗</span></a></main>
