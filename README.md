@@ -1,76 +1,51 @@
-# Groupie Tracker Website
+# Groupie Tracker
 
-Groupie Tracker is a web application that receives data from a given API and manipulates the information to create a user-friendly website for displaying details about bands and artists. This project is written in Go for the backend and focuses on data visualization, event handling, and client-server communication.
-
-## Objectives
-
-Groupie Tracker aims to achieve the following objectives:
-
-1. Receive data from a provided API, which consists of four parts:
-   - Artists: Information about bands and artists, including their names, images, start years, first album release dates, and members.
-   - Locations: Concert locations for bands and artists.
-   - Dates: Concert dates for bands and artists.
-   - Relation: Links between artists, dates, and locations.
-
-2. Build a user-friendly website to display band information through various data visualizations, such as blocks, cards, tables, lists, pages, and graphics.
-
-3. Create and visualize events and actions, focusing on client-server communication. An event may include a client call to the server to trigger specific actions and obtain information.
+A Go web application for exploring artists, bands, and concert histories. Built around the [Groupie Trackers API](https://groupietrackers.herokuapp.com/api), it combines artist profiles, categorized search, advanced filters, and concert maps in a responsive interface.
 
 ## Features
 
-Key features of the Groupie Tracker website include:
+- **Artist discovery:** image cards, detailed profiles, band members, formation years, album releases, and concert histories.
+- **Search:** case-insensitive matching across artists, members, locations, album dates, and creation years, with categorized typing suggestions.
+- **Filtering:** date ranges, member counts, and multiple country, region, and city selections. Filters work alongside search and sorting.
+- **Concert maps:** numbered SVG markers, regional focus, location details, and OpenStreetMap links.
+- **Visual design:** a record-store-inspired layout, grid/list views, CSS animation, keyboard navigation, and reduced-motion support.
 
-- Displaying band and artist information using various data visualizations.
-- Implementing client-server communication for retrieving data.
-- Handling events and actions triggered by the client or other factors.
-- Ensuring the site and server run without crashing and handle errors gracefully.
-- Adhering to coding best practices.
+## Stack
 
-## Technologies Used
+**Go 1.23+**, HTML, CSS, and SVG. The backend uses Go's standard library, including `net/http`, `encoding/json`, `html/template`, and `embed`. Geocoding uses Photon with OpenStreetMap data; the basemap uses Natural Earth land outlines.
 
-- **Go**: Backend development.
-- **HTML & CSS**: Frontend development.
-- **JSON**: Data format for API interaction.
-- **Gitea**: Version control and project management.
+Search, filtering, and rendering run on the server. The interface uses native HTML forms and suggestions, with no application JavaScript or third-party Go dependencies.
 
-## Prerequisites
+## Run locally
 
-To run this project, you need to have the following prerequisites:
+From the repository root:
 
-- Go programming language
-- A web browser to access the site
+```sh
+go run .
+```
 
-## Installation
+Open [localhost:8080](http://localhost:8080). Internet access is required for artist data and images. Use `go run . -addr 127.0.0.1:8081` to change the listen address, or `go run . -h` to list configuration options.
 
-Follow these steps to set up and run the Groupie Tracker website:
+The collection supports combined search, filters, sorting, and layout selection. Artist profiles provide concert histories and map views. Search and filter state is preserved in bookmarkable URLs.
 
-1. Clone this repository to your local machine.
-   ```shell
-   git clone https://learn.reboot01.com/git/hhanoon/groupie-tracker.git
-   ```
+## Technical decisions
 
-2. Change to the project directory.
-   ```shell
-   cd groupie-tracker
-   ```
+- Joins the API's artist, location, date, and relation datasets by artist ID.
+- Uses escaped Go templates and embeds templates, styles, map assets, and coordinate data in the executable.
+- Validates inputs and handles API failures with timeouts, response limits, and dedicated error pages.
+- Converts geographic coordinates into SVG markers using an equirectangular projection.
 
-3. Run the Go application to start the server.
-   ```shell
-   go run backend/main.go
-   ```
+Maps represent matched locations rather than exact concert venues. Region matching depends on the available geographic metadata.
 
-4. Open your web browser and navigate to [http://localhost:8080](http://localhost:8080) to access the Groupie Tracker website.
+## Checks
 
-## Usage
+```sh
+go vet ./...
+go build ./...
+```
 
-Once the website is running, you can use it to explore information about various bands and artists. You can trigger events and actions to retrieve specific data and visualize it in different formats.
+Manual checks covered search, combined filters, map coverage, error handling, and desktop/mobile layouts with JavaScript disabled. There is no committed automated test suite.
 
 ## Author
 
-- [Hamza Cheema](https://learn.reboot01.com/git/hcheema)
-- [Hussain Hanoon](https://learn.reboot01.com/git/hhanon)
-- [Zainab Nabhan](https://learn.reboot01.com/git/znabhan)
-
-## Acknowledgments
-
-- API source: [API](https://groupietrackers.herokuapp.com/api)
+[Hamza Cheema](https://learn.reboot01.com/git/hcheema)
